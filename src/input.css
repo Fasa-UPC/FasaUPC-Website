@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme{
+    --font-Vazirmatn: 'Vazirmatn', sans-serif;
+    --color-purple500: #6E6EFF;
+    --color-background: #1C1E26;
+    --color-dark100: #BCBDC1;
+    --color-dark800: #16171E;
+    --color-dark600: #242631;
+    --color-green400: #A3FFA6;
+    --color-light600: #E2E2DC;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
