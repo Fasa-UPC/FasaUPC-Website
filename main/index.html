@@ -12,23 +12,24 @@
 </head>
 
 <body class="bg-background text-white font-Vazirmatn">
-    <header class="header">
-        <div class="hidden md:flex md:justify-center md:items-center  md:my-[39px] md:mx-auto">
-            <div class="">
-                <img class="w-[106px] h-[115px]" src="../image/logo2.png" alt="">
-            </div>
-            <div class="flex gap-[20px] mr-[40px] ml-[421px]">
-                <a class="text-[18px] font-bold">خانه</a>
-                <a class="text-[#BCBDC1]">پروژه ها</a>
-                <a class="text-[#BCBDC1]">اعضا</a>
-                <a class="text-[#BCBDC1]">درباره ی ما</a>
-                <a class="text-[#BCBDC1]">ارتباط با ما</a>
-            </div>
-            <div class="">
-                <button class="bg-purple500 text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center" type="button">ورود / ثبت نام</button>
-            </div>            
+    <nav class="hidden md:flex md:justify-center md:items-center md:my-[39px] md:mx-auto z-50">
+        <div class="">
+            <img class="w-[106px] h-[115px]" src="../image/logo2.png" alt="">
         </div>
-        <div class="md:hidden text-black flex justify-between mx-[16px] my-[24px]">
+        <div class="flex gap-[20px] mr-[40px] ml-[421px]">
+            <a class="text-[18px] font-bold">خانه</a>
+            <a class="text-[#BCBDC1]">پروژه ها</a>
+            <a class="text-[#BCBDC1]">اعضا</a>
+            <a class="text-[#BCBDC1]">درباره ی ما</a>
+            <a class="text-[#BCBDC1]">ارتباط با ما</a>
+        </div>
+        <div class="">
+            <button class="bg-purple500 text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center" type="button">ورود / ثبت نام</button>
+        </div>            
+    </nav>
+    <header class="header">
+        
+        <nav class="md:hidden text-black flex justify-between mx-[16px] my-[24px]">
             <div class=" bg-white rounded-full flex items-center justify-center w-[42px] h-[42px]">
                 <img class="w-[24px] h-[24px] justify-center " src="../image/Menu Icon.svg" alt="">
             </div>
@@ -37,8 +38,8 @@
                 <span class="py-[9px] mx-[10px]">نام کاربری</span>
                 <img class="w-[24px] h-[24px] ml-[10px]" src="../image/Ellipse 19.png" alt="">
             </div>
-        </div>
-        <div class="md:flex md:flex-row-reverse md:justify-center md:mt-[96px] md:mx-auto">
+        </nav>
+        <section class="md:flex md:flex-row-reverse md:justify-center md:mt-[96px] md:mx-auto">
             <div class="justify-items-center mb-1">
                 <img 
                 class=" w-[156px] h-[169px]
@@ -69,7 +70,7 @@
                     type="button">مورد کمیته</button>
                 </div>
             </div>
-        </div>
+        </section>
         <div class="flex-col justify-items-center mt-[114px]">
             <a class="block text-dark100 pb-[12px]">برو به پایین</a>
             <img src="../image/Group.svg" alt="">
@@ -77,7 +78,7 @@
     </header>
     <!-- ---------------- -->
     <main>
-        <div class="md:flex md:relative justify-center">
+        <section class="md:flex md:relative justify-center">
             
                 <hr class="hidden md:block absolute top-[70px] w-full h-[1px] decoration-dashed bg-white -z-10">
 
@@ -88,8 +89,8 @@
                 <hr class="w-[1px] h-[25px] bg-white">
                 <p class="pr-[24px] font-bold text-xl text-center basis-0 ">55+ پروژهها</p>
             </div>
-        </div>
-        <div class="md:flex justify-center ">
+        </section>
+        <section class="md:flex justify-center ">
             <div class="flex flex-col items-center gap-[16px] mt-[74px]
                     md:flex-row md:gap-[24px] md:w-[1041px] md:flex-wrap md:justify-center">
                 <div class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600
@@ -124,9 +125,9 @@
                 md:w-[306px] md:h-[40px] md:justify-center">عضو
                 کمیته میشوم</button>
             </div>
-        </div>
+        </section>
         <!-- ---------------- -->
-        <div class=" md:mx-auto md:w-[1041px]">
+        <section class=" md:mx-auto md:w-[1041px]">
             <div class="flex justify-between mx-[16px] mb-[32px] mt-[128px]">
                 <h2 class="text-[16px] font-bold
                             md:w-[125px] md:text-[18px] md:font-[400] md:leading-[28px]">پروژه های منتخب</h2>
@@ -175,9 +176,9 @@
                     <div class="h-[36px]"></div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- ---------------- -->
-        <div class="mb-[96px] md:w-[1041px] md:mx-auto">
+        <section class="mb-[96px] md:w-[1041px] md:mx-auto">
             <div class="flex justify-between mx-[16px] mb-[32px] mt-[128px]">
                 <h2 class="text-[16px] font-bold
                             md:text-[18px] md:font-[400]">اعضای منتخب</h2>
@@ -223,9 +224,9 @@
                     <div class="h-[36px]"></div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- ------------- -->
-         <div class="mb-[96px] 
+         <section class="mb-[96px] 
                     md:w-[1041px] md:h-[701px] md:mx-auto">   
             <div class="flex justify-between mx-[16px] mb-[32px]">
                 <h3 class="text-[16px] font-bold">تیم ها</h3>
@@ -237,40 +238,18 @@
                     <img class="absolute right-0 top-0 w-full h-full -z-20 object-cover
                                 md:w-[1040px] md:h-fit" src="../image/Image.png" alt="">
                     <h3 class="text-[16px] font-bold absolute right-[16px] bottom-[4px]
-                                md:bottom-[174px]">عنوان تیم (تیم فرانت)</h3>
+                                md:top-[630px]">عنوان تیم (تیم فرانت)</h3>
                     <div class="w-[64px] h-[64px] bg-[#282A36] absolute left-[16px] bottom-[4px] rounded-[8px]
-                                md:bottom-[174px]">
+                                md:top-[596px]">
                         <img class="p-[14px]" src="../image/Ellipse 19.png" alt="">
                     </div>
-                        <p class="hidden absolute text-[14px] text-[#E2E2DC] mx-[16px]
-                                md:inline md:bottom-[123px] md:text-[16px] md:font-[100]">توضیح کوتاه و جامع درباره تیم و وظایف توضیح کوتاه و جامع درباره تیم و وظایف توضیح کوتاه و جامع درباره تیم و وظایف.</p>
-                        <div class="hidden md:block absolute bottom-[-2px]">
-                            <div class="flex mt-[17px] mr-[16px]
-                                    md:mt-0">
-                                <div class="flex flex-col ml-[48px]">
-                                    <img class="w-[16px] h-[16px]" src="../image/People Icon.svg" alt="">
-                                    <p class=" text-[14px] text-[#9C9DA3]">5 عضو</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <img class="w-[16px] h-[16px] " src="../image/Memory Icon.svg" alt="">
-                                    <p class=" text-[14px] text-[#9C9DA3]">4 تکنولوژی</p>
-                                </div>
-                                <div class="flex flex-col mr-[48px]">
-                                    <img class="w-[16px] h-[16px]" src="../image/Collection Icon.svg" alt="">
-                                    <p class=" text-[14px] text-[#9C9DA3]">3 پروژه</p>
-                                </div>
-                            </div>
-                            <div class="flex mx-[16px] mt-[45px] gap-[8px]
-                                        md:mt-[32px]">
-                                <button class=" font-bold w-[218px] h-[36px] rounded-md py-[6px] outline-2 outline-purple500 md:h-[40px]"type="button">برو به صفحه‌ی تیم</button>
-                                <div class="h-[36px]"></div>
-                            </div> 
-                        </div>
+                    <p class="hidden absolute text-[14px] text-[#E2E2DC] mx-[16px]
+                            md:inline md:top-[665px] md:text-[16px] md:font-[100]">توضیح کوتاه و جامع درباره تیم و وظایف توضیح کوتاه و جامع درباره تیم و وظایف توضیح کوتاه و جامع درباره تیم و وظایف.</p>
                 </div>
             </div>    
                 <p class="text-[14px] text-[#E2E2DC] mx-[16px] mt-2
                 md:hidden">توضیح کوتاه و جامع درباره تیم و وظایف توضیح کوتاه و جامع درباره تیم و وظایف توضیح کوتاه و جامع درباره تیم و وظایف.</p>
-                <div class="md:hidden">
+                <div class="">
                     <div class="flex mt-[17px] mr-[16px]
                             md:mt-0">
                         <div class="flex flex-col ml-[48px]">
@@ -291,9 +270,9 @@
                         <div class="h-[36px]"></div>
                     </div> 
                 </div>
-        </div>
+        </section>
         <!-------------------->
-        <div class="flex justify-center">
+        <section class="flex justify-center mt-[128px]">
             <div class="bg-dark600 w-[334px] h-[227px] flex flex-col gap-2.5 items-center rounded-[8px]">
                 <div class="flex justify-between mr-[16px] pt-[8px]">
                     <img class="w-[48px] h-[48px] " src="../image/Member Avatar.png" alt="">
@@ -308,14 +287,14 @@
                         border-l-[10px] border-l-transparent
                         border-b-[8px] border-b-dark800
                         border-r-[10px] border-r-transparent
-                        absolute top-0 right-[20px]">
+                        absolute -top-[6px] right-[20px]">
                     </div>
                     <div class="bg-dark800 w-[302px] h-[134px] rounded-[4px]">
-                        <p class="text-[14px] font-medium mt-[8px] mx-[8px] w-[286px] h-[108px]">از وقتی به کمیته برنامه‌نویسان پیوستم، یادگیری و پیشرفت برام لذت‌بخش‌تر شده. اینجا یه جمع صمیمی و حرفه‌ایه که همیشه برای حمایت و همکاری آماده‌ست!</p>
+                        <p class="text-[14px] font-medium pt-[8px] mx-[8px] w-[286px] h-[108px]">از وقتی به کمیته برنامه‌نویسان پیوستم، یادگیری و پیشرفت برام لذت‌بخش‌تر شده. اینجا یه جمع صمیمی و حرفه‌ایه که همیشه برای حمایت و همکاری آماده‌ست!</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!--------------------->
     </main>
 </body>
