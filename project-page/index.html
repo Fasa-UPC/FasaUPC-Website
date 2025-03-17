@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-[#1C1E26] font-Vazirmatn">
+    <!-- navbar-deckstop-start-->
+    <nav class="hidden md:flex md:justify-center md:items-center md:my-[39px] md:mx-auto z-50">
+        <div class="">
+            <img class="w-[106px] h-[115px]" src="../image/logo2.png" alt="">
+        </div>
+        <div class="flex gap-[20px] mr-[40px] ml-[421px]">
+            <a class="text-[#BCBDC1] text-[18px] font-bold hover:scale-125 transition delay-150 duration-300 ease-in-out">خانه</a>
+            <a class="text-[18px] font-bold text-[#F1F1FF] hover:scale-125 transition delay-150 duration-300 ease-in-out">پروژه ها</a>
+            <a class="text-[#BCBDC1] hover:scale-125 transition delay-150 duration-300 ease-in-out">اعضا</a>
+            <a class="text-[#BCBDC1] hover:scale-125 transition delay-150 duration-300 ease-in-out">درباره ی ما</a>
+            <a class="text-[#BCBDC1] hover:scale-125 transition delay-150 duration-300 ease-in-out">ارتباط با ما</a>
+        </div>
+        <div class="">
+            <button class="bg-purple500 text-[#F1F1FF] text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center hover:bg-[#a0a0fa]
+                transition duration-300 ease-in-out" type="button">ورود / ثبت نام</button>
+        </div>            
+    </nav>
+    <!-- navbar-deckstop-end-->
+     <!-- -------header-start------- -->
     <header>
         <!-- nav-bar-start(modile) -->
         <nav class="md:hidden text-black flex justify-between mx-[16px] my-[24px]">
@@ -20,24 +39,32 @@
             </section>
         </nav>
         <!-- nav-bar-end(mobile) -->
-         <section class="w-[430px] h-[265px] relative">
+         <section class="w-[430px] h-[265px] relative
+            md:w-[1041px] md:h-[500px] md:mx-auto">
             <div class="relative w-full h-full bg-linear-to-t from-[#1C1E26] from-7% to-[#16171E]/0 to-100%">
-                <img class="w-full h-[265px] absolute bottom-1 object-cover blur-[2px] -z-10" src="../image/Image.png" alt="">
-                
+                <img class="w-full h-[265px] absolute bottom-1 object-cover blur-[2px] -z-10
+                    md:h-[500px] md:rounded-t-lg" src="../image/Image.png" alt="">
             </div>
-            <div class="w-[430px] flex items-end justify-between absolute bottom-0 ">
-                <h3 class="text-[#E2E2DC] text-[16px] font-[700] mr-4">طراحی UI/UX وب سایت کمیته</h3>
-                <img class="w-[180px] h-[120px] rounded-md ml-4" src="../image/Image.png" alt="">
+            <div class="w-[430px] flex items-end justify-between absolute bottom-0 
+                md:w-[1041px]">
+                <h3 class="text-[#E2E2DC] text-[16px] font-[800] mr-4
+                    md:text-[20px]">طراحی UI/UX وب سایت کمیته</h3>
+                <img class="w-[180px] h-[120px] rounded-md ml-4
+                    md:w-[270px] md:h-[180px]" src="../image/Image.png" alt="">
             </div>
         </section>
-        <div class="w-[398px] mx-auto mt-[19px]">
-            <p class="text-[14px] text-[#E2E2DC] font-[300] ">
+        <div class="w-[398px] mx-auto mt-[19px]
+            md:w-[1041px] md:mt-[40px]">
+            <p class="text-[14px] text-[#E2E2DC] font-[300] 
+                md:text-[16px] md:font-[300]">
                 طراحی UI/UX وب سایت اصلی کمیته برنامه نویسی دانشگاه فسا با کمک تیم UI کمیته طراحی UI/UX وب سایت اصلی کمیته برنامه نویسی دانشگاه فسا با کمک تیم UI کمیته طراحی UI/UX وب سایت اصلی کمیته برنامه نویسی دانشگاه فسا با کمک تیم UI کمیته.
             </p>
         </div>
     </header>
+    <!-- -------main-start------- -->
     <main>
-        <section class="w-[398px] mx-auto mt-[24px] grid grid-cols-2 gap-[16px]">
+        <section class="w-[398px] mx-auto mt-[24px] grid grid-cols-2 gap-[16px]
+            md:w-[1041px] md:mt-[40px]">
             <div class="flex flex-col items-center">
                 <div class="w-[151px] flex flex-row gap-2 justify-center border-b-2 border-[#53555E] pb-2">
                     <img src="../image/Icon.svg" alt="">
@@ -67,24 +94,28 @@
                 <span class="text-[16px] text-[#EAEAEB] font-[700] pt-2">تکمیل شده</span>
             </div>
         </section>
-        <section class="w-[398px] mx-auto">
-            <div class="flex flex-row gap-4 mt-12">
-                <button type="button" class="bg-purple500 flex flex-row-reverse justify-items-center gap-1.5 text-[14px] text-[#F1F1FF] font-[400] px-[115px] py-1.5 rounded-[8px]">
+        <section class="w-[398px] mx-auto
+            md:w-[797px]">
+            <div class="flex flex-row justify-center gap-4 mt-12">
+                <button type="button" class="bg-purple500 flex flex-row-reverse justify-items-center gap-1.5 text-[14px] text-[#F1F1FF] font-[400] px-[115px] py-1.5 rounded-[8px]
+                    md:px-[225px] md:py-2">
                     <span class="text-nowrap">لینک آنلاین پروژه</span>
                     <img src="../image/Huge-icon-internet.svg" alt="">
                 </button>
                 <img src="../image/Huge-icon.svg" alt="">
             </div>
-            <div class="flex flex-row gap-4 mt-4">
-                <button type="button" class="flex flex-row-reverse justify-items-center gap-1.5 text-[14px] text-[#F1F1FF] font-[400] border-2 border-purple500 px-[118px] py-1.5 rounded-[8px]">
+            <div class="flex flex-row justify-center gap-4 mt-4">
+                <button type="button" class="flex flex-row-reverse justify-items-center gap-1.5 text-[14px] text-[#F1F1FF] font-[400] border-2 border-purple500 px-[118px] py-1.5 rounded-[8px]
+                    md:px-[225px] md:py-2">
                     <span>سورس کد پروژه</span>
                     <img src="../image/Group-github.svg" alt="">
                 </button>
                 <img src="../image/Huge-icon.svg" alt="">
             </div>
         </section>
-        <section class="relative w-full h-[596px] bg-dark800 mt-12 rounded-b-[8px] rounded-tr-[8px] rounded-tl-[60px] overflow-hidden">
-            <div class="absolute right-1.5">
+        <section class="relative w-full h-[596px] bg-dark800 mt-12 rounded-b-[8px] rounded-tr-[8px] rounded-tl-[60px] overflow-hidden
+            md:w-[1041px] md:mx-auto">
+            <div class="absolute right-4">
                 <button type="button" class=" bg-dark800 text-[16px] text-[#BCBDC1] font-[400] py-[12px] px-[24px] rounded-b-lg" href="#">توسعه دهندگان</button>
                 <button type="button" class=" bg-background text-[16px] text-[#EAEAEB] font-[500] py-[12px] px-[24px] rounded-b-lg" href="#">تکنولوژی‌ها</button>
             </div>
@@ -98,7 +129,8 @@
                 <p class="text-[14px] text-[#BCBDC1] font-[400] leading-7">یه پاراگراف متن راجب نقش این تکنولوژی توی روند توسعه پروژه یه پاراگراف متن راجب نقش این تکنولوژی توی روند توسعه پروژه    یه پاراگراف متن راجب نقش 
                     این تکنولوژی توی روند توسعه پروژه یه پاراگراف متن راجب نقش این تکنولوژی توی روند توسعه پروژه</p>
             </div>
-            <div class="absolute bottom-9 mt-6 mx-4">
+            <div class="absolute bottom-9 mt-6 mx-4
+                md:w-[100%]  md:bottom-10 md:mt-6 ">
                 <h3 class="text-[16px] text-[#EAEAEB] font-[400] mb-4">میزان استفاده</h3>
                 <div class="flex ">
                     <div class="w-[132px] border-b-8 border-[#53555E] pb-1.5">
@@ -113,8 +145,9 @@
                 </div>
             </div>
         </section>
-        <section class="relative w-full h-[577px] bg-dark800 mt-12 rounded-lg rounded-tl-[60px] overflow-hidden">
-            <div class="absolute right-1.5">
+        <section class="relative w-full h-[577px] bg-dark800 mt-12 rounded-lg rounded-tl-[60px] overflow-hidden
+            md:w-[1041px] md:mx-auto">
+            <div class="absolute right-4">
                 <button type="button" class=" bg-background text-[16px] text-[#EAEAEB] font-[500] py-[12px] px-[24px] rounded-b-lg" href="#">توسعه دهندگان</button>
                 <button type="button" class=" bg-dark800 text-[16px] text-[#BCBDC1] font-[400] py-[12px] px-[24px] rounded-b-lg" href="#">تکنولوژی‌ها</button>
             </div>
