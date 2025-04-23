@@ -9,6 +9,10 @@
     --color-dark600: #242631;
     --color-green400: #A3FFA6;
     --color-light600: #E2E2DC;
+
+    --inset-shadow-bt: inset -2px 2px 8px rgb(0,0,0,0.25);
+    --shadow-bt : 0 2px 4px rgb(0,0,0,0.20);
+    --shadow-bs : 0 2px 8px rgba(162, 89, 255, 0.25)
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
