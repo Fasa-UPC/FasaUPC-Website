@@ -1,5 +1,6 @@
 import { UserRoleEnum } from '../enums/userRole-enum';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Profile } from './profile.entity';
 
 @Entity({ name: 'user' })
 export class User {
@@ -9,6 +10,9 @@ export class User {
   @Column({ name: 'sso_id', unique: true })
   ssoID: string;
 
-  @Column({ type: 'enum', enum: UserRoleEnum , name: 'role' })
+  @Column({ type: 'enum', enum: UserRoleEnum, name: 'role' })
   role: UserRoleEnum;
+
+  @OneToOne(() => Profile, (profile) => profile.user)
+  profile: Profile;
 }
