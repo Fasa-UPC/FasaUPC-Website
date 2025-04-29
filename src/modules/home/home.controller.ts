@@ -15,7 +15,10 @@ export class HomeController {
     // Top devs
     // Top teams
     // Testimonials
-    const [devsCount] = await Promise.all([this.homeService.getDevCount()]);
-    return { message: devsCount };
+    const [devsCount, projsCount] = await Promise.all([
+      this.homeService.getDevCount(),
+      this.homeService.getProjectsCount(),
+    ]);
+    return { devsCount, projsCount };
   }
 }
