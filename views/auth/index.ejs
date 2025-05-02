@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <div
+      id="loading-indicator"
+      class="absolute top-0 left-0 w-screen h-screen hide [.hide]:opacity-0 [.hide]:pointer-events-none transition-opacity"
+    >
+      <div
+        id="loading-backdrop"
+        class="w-full h-full bg-slate-700/20 backdrop-blur-md"
+      ></div>
+      <div
+        id="loading-content"
+        class="absolute top-1/2 left-1/2 -translate-1/2 w-[200px] h-[200px] bg-white rounded-lg"
+      >
+        Pending...
+      </div>
+    </div>
+  </body>
+  <script>
+    const loadingElem = document.getElementById('loading-indicator');
+
+    function showLoading() {
+      loadingElem.classList.remove('hide');
+    }
+
+    function hideLoading() {
+      loadingElem.classList.add('hide');
+    }
+
+    async function auth() {
+      try {
+        const searchParams = new URLSearchParams(window.location.search);
+        showLoading();
+        const res = await fetch(
+          `/auth?from=${searchParams.get('from')}&tokenID=${searchParams.get('tokenID')}`,
+          {
+            method: 'POST',
+            redirect: 'follow',
+          },
+        );
+
+        if (res.redirected) {
+          window.location.replace(res.url);
+        }
+        // const data = await res.json();
+        // window.location.replace(data.from);
+        // window.location.replace('/auth/approved');
+      } catch (err) {
+        console.log(err);
+      } finally {
+        hideLoading();
+      }
+    }
+
+    auth();
+  </script>
+</html>

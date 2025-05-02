@@ -1,12 +1,18 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { User } from './user.entity';
 
 @Entity({ name: 'profile' })
 export class Profile {
-  @PrimaryGeneratedColumn('uuid', { name: 'id'})
-    id: string;
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  id: string;
 
-  @Column({ name: 'user_id'})
+  @Column({ name: 'user_id' })
   userID: string;
 
   @Column({ name: 'first_name', length: 15 })
@@ -15,22 +21,22 @@ export class Profile {
   @Column({ name: 'last_name', length: 20 })
   lastName: string;
 
-  @Column({ name: 'title', length: 20 })
+  @Column({ name: 'title', length: 20, nullable: true })
   title: string;
 
-  @Column({ name: 'province' })
+  @Column({ name: 'province', nullable: true })
   province: string;
 
-  @Column({ name: 'city' })  
+  @Column({ name: 'city', nullable: true })
   city: string;
 
-  @Column({ name: 'summary', type: 'text' })
+  @Column({ name: 'summary', type: 'text', nullable: true })
   summary: string;
 
-  @Column({ name: 'image', type: 'text' })
+  @Column({ name: 'image', type: 'text', nullable: true })
   image: string;
 
-  @Column({ name: 'banner', type: 'text' })  
+  @Column({ name: 'banner', type: 'text', nullable: true })
   banner: string;
 
   @ManyToOne(() => User)
