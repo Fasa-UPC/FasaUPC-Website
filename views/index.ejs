@@ -657,4 +657,15 @@
       <!--------------------->
     </main>
   </body>
+
+  <script type="module">
+    import { getLoginPath } from '/scripts/common.js';
+    const signinSignupBtn = document.getElementById('signin-signup-btn');
+
+    function navigateToLogin(ev) {
+      window.location.href = getLoginPath();
+    }
+
+    signinSignupBtn.addEventListener('click', navigateToLogin);
+  </script>
 </html>

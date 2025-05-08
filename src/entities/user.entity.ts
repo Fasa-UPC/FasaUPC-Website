@@ -13,6 +13,6 @@ export class User {
   @Column({ type: 'enum', enum: UserRoleEnum, name: 'role' })
   role: UserRoleEnum;
 
-  @OneToOne(() => Profile, (profile) => profile.user)
+  @OneToOne(() => Profile, (profile) => profile.user, { cascade: true })
   profile: Profile;
 }

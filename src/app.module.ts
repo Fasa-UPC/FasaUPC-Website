@@ -7,6 +7,7 @@ import { ProfilesModule } from './modules/profiles/profiles.module';
 import { dataSourceOptions } from './config/typeorm.config';
 import { TeamsService } from './modules/teams/teams.service';
 import { HomeModule } from './modules/home/home.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -25,6 +26,8 @@ import { HomeModule } from './modules/home/home.module';
     ProfilesModule,
 
     HomeModule,
+
+    AuthModule,
   ],
   controllers: [],
   providers: [TeamsService],
