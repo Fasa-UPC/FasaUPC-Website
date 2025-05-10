@@ -8,6 +8,9 @@ import { dataSourceOptions } from './config/typeorm.config';
 import { TeamsService } from './modules/teams/teams.service';
 import { HomeModule } from './modules/home/home.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { OptionalUserAuthInterceptor } from './interceptors/auth.interceptor';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -28,8 +31,11 @@ import { AuthModule } from './modules/auth/auth.module';
     HomeModule,
 
     AuthModule,
+
+    JwtModule.register({ secret: process.env.JWT_SECRET_KEY }),
   ],
   controllers: [],
-  providers: [TeamsService],
+  providers: [TeamsService, OptionalUserAuthInterceptor],
+  exports: [OptionalUserAuthInterceptor],
 })
 export class AppModule {}
