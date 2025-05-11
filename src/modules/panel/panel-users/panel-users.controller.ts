@@ -1,0 +1,17 @@
+import { Controller, Get, Query, Render } from '@nestjs/common';
+import { PanelUsersService } from './panel-users.service';
+
+@Controller('panel/users')
+export class PanelUsersController {
+  constructor(private readonly panelUsersService: PanelUsersService) {}
+
+  @Get('')
+  @Render('panel/users')
+  async getPanelUsersView(
+    @Query('page') page: number,
+    @Query('count') count: number,
+  ) {
+    const users = await this.panelUsersService.getUsersTable({ count, page });
+    return { users };
+  }
+}

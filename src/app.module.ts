@@ -11,6 +11,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { OptionalUserAuthInterceptor } from './interceptors/auth.interceptor';
 import { JwtModule } from '@nestjs/jwt';
+import { PanelModule } from './modules/panel/panel.module';
 
 @Module({
   imports: [
@@ -33,6 +34,8 @@ import { JwtModule } from '@nestjs/jwt';
     AuthModule,
 
     JwtModule.register({ secret: process.env.JWT_SECRET_KEY }),
+
+    PanelModule,
   ],
   controllers: [],
   providers: [TeamsService, OptionalUserAuthInterceptor],

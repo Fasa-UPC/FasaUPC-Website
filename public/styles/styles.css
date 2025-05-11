@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --color-purple-500: #6e6eff;
     --color-purple-600: #6464E8;
+    --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -31,7 +32,6 @@
     --color-dark100: #bcbdc1;
     --color-dark800: #16171e;
     --color-dark600: #242631;
-    --color-white-hv: #EAEAEB;
     --color-white-hv: #EAEAEB;
   }
 }
@@ -181,20 +181,29 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
-  }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
   }
   .inset-x-0 {
     inset-inline: calc(var(--spacing) * 0);
   }
   .-top-\[6px\] {
     top: calc(6px * -1);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-1\/2 {
+    top: calc(1/2 * 100%);
   }
   .top-2 {
     top: calc(var(--spacing) * 2);
@@ -229,11 +238,20 @@
   .-right-\[400px\] {
     right: calc(400px * -1);
   }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
   .right-\[20px\] {
     right: 20px;
   }
   .-left-24 {
     left: calc(var(--spacing) * -24);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
+  .left-1\/2 {
+    left: calc(1/2 * 100%);
   }
   .left-2 {
     left: calc(var(--spacing) * 2);
@@ -243,6 +261,12 @@
   }
   .-z-10 {
     z-index: calc(10 * -1);
+  }
+  .z-30 {
+    z-index: 30;
+  }
+  .z-40 {
+    z-index: 40;
   }
   .z-50 {
     z-index: 50;
@@ -442,6 +466,9 @@
   .h-\[181px\] {
     height: 181px;
   }
+  .h-\[200px\] {
+    height: 200px;
+  }
   .h-\[210px\] {
     height: 210px;
   }
@@ -517,6 +544,9 @@
   .w-\[180px\] {
     width: 180px;
   }
+  .w-\[200px\] {
+    width: 200px;
+  }
   .w-\[267px\] {
     width: 267px;
   }
@@ -525,6 +555,9 @@
   }
   .w-\[290px\] {
     width: 290px;
+  }
+  .w-\[300px\] {
+    width: 300px;
   }
   .w-\[302px\] {
     width: 302px;
@@ -543,6 +576,14 @@
   }
   .w-full {
     width: 100%;
+  }
+  .w-screen {
+    width: 100vw;
+  }
+  .-translate-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-rotate-45 {
     rotate: calc(45deg * -1);
@@ -622,9 +663,6 @@
   .overflow-x-hidden {
     overflow-x: hidden;
   }
-  .rounded {
-    border-radius: 0.25rem;
-  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
@@ -695,35 +733,14 @@
   .bg-\[\#9747FF80\]\/40 {
     background-color: color-mix(in oklab, #9747FF80 40%, transparent);
   }
-  .bg-\[\#A259FF\] {
-    background-color: #A259FF;
-  }
-  .bg-\[\#A259FF\]\/2 {
-    background-color: color-mix(in oklab, #A259FF 2%, transparent);
-  }
-  .bg-\[\#A259FF\]\/4 {
-    background-color: color-mix(in oklab, #A259FF 4%, transparent);
-  }
-  .bg-\[\#A259FF\]\/5 {
-    background-color: color-mix(in oklab, #A259FF 5%, transparent);
-  }
-  .bg-\[\#A259FF\]\/6 {
-    background-color: color-mix(in oklab, #A259FF 6%, transparent);
-  }
-  .bg-\[\#A259FF\]\/20 {
-    background-color: color-mix(in oklab, #A259FF 20%, transparent);
-  }
-  .bg-\[\#A259FF\]\/40 {
-    background-color: color-mix(in oklab, #A259FF 40%, transparent);
-  }
   .bg-\[\#A259FF\]\/50 {
     background-color: color-mix(in oklab, #A259FF 50%, transparent);
   }
-  .bg-\[\#A259FF\]\/60 {
-    background-color: color-mix(in oklab, #A259FF 60%, transparent);
-  }
   .bg-background {
     background-color: var(--color-background);
+  }
+  .bg-dark100 {
+    background-color: var(--color-dark100);
   }
   .bg-dark600 {
     background-color: var(--color-dark600);
@@ -733,6 +750,12 @@
   }
   .bg-purple-500 {
     background-color: var(--color-purple-500);
+  }
+  .bg-slate-700\/20 {
+    background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-700) 20%, transparent);
+    }
   }
   .bg-white {
     background-color: var(--color-white);
@@ -758,8 +781,17 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .py-\[6px\] {
     padding-block: 6px;
@@ -790,6 +822,9 @@
   }
   .text-center {
     text-align: center;
+  }
+  .text-start {
+    text-align: start;
   }
   .font-Vazirmatn {
     font-family: var(--font-Vazirmatn);
@@ -918,6 +953,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .opacity-0 {
+    opacity: 0%;
+  }
   .opacity-60 {
     opacity: 60%;
   }
@@ -951,6 +989,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-opacity {
     transition-property: opacity;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -964,6 +1007,11 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
+  .peer-\[\.show\]\:opacity-100 {
+    &:is(:where(.peer):is(.show) ~ *) {
+      opacity: 100%;
+    }
+  }
   .hover\:bg-purple-500\/5 {
     &:hover {
       @media (hover: hover) {
@@ -975,15 +1023,12 @@
     }
   }
   .hover\:bg-purple-600 {
-  .hover\:bg-purple-600 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-purple-600);
         background-color: var(--color-purple-600);
       }
     }
   }
-  .hover\:bg-purple-600\/5 {
   .hover\:bg-purple-600\/5 {
     &:hover {
       @media (hover: hover) {
@@ -1438,6 +1483,21 @@
   .md\:text-\[\#E2E2DC\] {
     @media (width >= 48rem) {
       color: #E2E2DC;
+    }
+  }
+  .\[\.hide\]\:pointer-events-none {
+    &:is(.hide) {
+      pointer-events: none;
+    }
+  }
+  .\[\.hide\]\:-right-full {
+    &:is(.hide) {
+      right: -100%;
+    }
+  }
+  .\[\.hide\]\:opacity-0 {
+    &:is(.hide) {
+      opacity: 0%;
     }
   }
 }
