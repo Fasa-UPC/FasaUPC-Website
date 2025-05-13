@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FasaUPC | Panel</title>
-    <link rel="stylesheet" href="/styles/styles.css" />
-  </head>
-  <body dir="rtl" class="bg-background">
-    <%- include('../../partials/panel/topbar.ejs') %> <%-
-    include('../../partials/panel/sidebar.ejs') %>
-    <div class="mx-[16px]">
-      <table class="text-white">
-        <thead>
-          <tr>
-            <th class="text-start py-2 px-2"></th>
-            <th class="text-start py-2 px-2">نام</th>
-            <th class="text-start py-2 px-2">نام خانوادگی</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% users.forEach((user, index) => { %>
-                <tr>
-                <td class="py-4 px-2"><%= index + 1 %></td>
-                <td class="py-4 px-2"><%= user.profile.firstName %></td>
-                <td class="py-4 px-2"><%= user.profile.lastName %></td>
-                </tr>
-        <% }) %>
-        </tbody>
-        <tfoot></tfoot>
-      </table>
-    </div>
-  </body>
 
-  <script src="/scripts/sidebar.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FasaUPC | Panel</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+
+<body dir="rtl" class="bg-background">
+  <%- include('../../partials/panel/topbar.ejs') %> <%- include('../../partials/panel/sidebar.ejs') %>
+      <div class="mx-[16px]">
+        <table class="text-white">
+          <thead>
+            <tr>
+              <th class="text-start py-2 px-2"></th>
+              <th class="text-start py-2 px-2">نام</th>
+              <th class="text-start py-2 px-2">نام خانوادگی</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach((user, index)=> { %>
+              <tr>
+                <td class="py-4 px-2">
+                  <%= index + 1 %>
+                </td>
+                <td class="py-4 px-2">
+                  <%= user.profile.firstName %>
+                </td>
+                <td class="py-4 px-2">
+                  <%= user.profile.lastName %>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+</body>
+
+<script src="/scripts/sidebar.js"></script>
+
 </html>
