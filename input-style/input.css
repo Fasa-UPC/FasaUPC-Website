@@ -12,14 +12,17 @@
   --color-purple-600: #6464E8;
   --color-white-hv: #EAEAEB;
   --color-dark-100: #BCBDC1;
-  
+  --color-purple-800: #424299;
+  --color-gray-700: #696969;
 
   --inset-shadow-bt: inset -2px 2px 8px rgb(0, 0, 0, 0.25);
-  --shadow-bt: 0 2px 4px rgb(0, 0, 0, 0.2);
+  --shadow-bt: 0 2px 4px rgb(0, 0, 0, 0.25);
   --shadow-bs: 0 2px 8px rgba(162, 89, 255, 0.25);
   --shadow-hover: 4px 4px 4px rgba(162, 89, 255, 0.25);
   --shadow-hover-box: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-box: 2px 2px 8px rgba( 255, 255, 255, 0.25);
   --inset-shadow-hover: inset 2px -2px 8px rgba(0, 0, 0, 0.25);
+  --inset-shadow-box: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
