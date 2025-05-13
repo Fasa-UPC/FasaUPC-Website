@@ -1,12 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+
   </head>
-  <body>
-    <h1>Single Profile</h1>
-    <h3><%= profile %></h3>
+  <body
+    class="bg-background text-white font-Vazirmatn overflow-x-hidden cursor-default"
+  >
+    <nav
+      class="hidden md:flex md:justify-between md:items-center md:my-[30px] md:mx-[80px] z-50"
+    >
+      <div class="flex items-center gap-10 justify-between">
+        <div class="">
+          <img class="w-[106px] h-[115px]" src="/assets/logo2.png" alt="" />
+        </div>
+        <div class="flex gap-[20px] ">
+          <a
+            class="text-[#BCBDC1]  hover:transition duration-300 ease-in-out cursor-pointer"
+            >خانه</a
+          >
+          <a
+            class="text-[#BCBDC1]  hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >پروژه ها</a
+          >
+          <a
+            class="text-[18px] font-bold hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >اعضا</a
+          >
+          <a
+            class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >درباره ی ما</a
+          >
+          <a
+            class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >ارتباط با ما</a
+          >
+        </div>
+      </div>
+      <div class="">
+        <button
+          class="bg-purple-500 text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center transition duration-300 ease-in-out cursor-pointer hover:bg-purple-600"
+          type="button"
+        >
+          ورود / ثبت نام
+        </button>
+      </div>
+    </nav>
+    <header class="header ">
+      <!-- navbar-mobil-start-->
+      <nav class="md:hidden text-black flex justify-between items-center mx-[16px] my-[24px]">
+        <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="">
+        <div class="mb-1">
+          <img class=" w-[106px] md:w-[312px] md:h-[337px] md:mr-[55px]" src="/assets/Vector.svg" alt="">
+        </div>
+        <div class="h-10 bg-purple-500 py-2 rounded-lg">
+          <img class="w-6 mx-2" src="/assets/svg/user-circle.svg" alt="">
+        </div>   
+      </nav>
+      <!-- navbar-mobil-end -->
+      <section class="relative">
+        <img class="w-[100%] h-100 object-fit-cover" src="/assets/modern-ai-robot-with-futuristic-digital-elements-image---2024-_10716499.png" alt="">
+        <div class="w-fit absolute top-[245px] right-50 flex flex-col px-10 py-3 bg-linear-to-tl to-purple-500 from-purple-800 inset-shadow-box shadow-box rounded-xl">
+          <h2 class="text-white text-[40px] font-bold"><%= profile %></h2>
+          <p class="text-white text-[16px] font-medium">UI/UX designer</p>
+        </div>
+        <div class=" absolute top-[200px] left-[200px]">
+          <div class="bg-black w-[300px] h-[300px] rounded-full shadow-bs"></div>
+          <div class="flex gap-6 justify-center mt-6 mb-3">
+            <a href="#">
+              <img class="w-[48px] h-[48px]" src="/assets/svg/github.svg" alt=""> 
+            </a>
+            <a href="#">
+              <img class="w-[48px] h-[48px]" src="/assets/svg/linkedin.svg" alt="">
+            </a>
+            <a href="#">
+              <img class="w-[48px] h-[48px]" src="/assets/svg/dirrbel.svg" alt="">
+            </a>
+          </div>
+          <span class="flex gap-[6px] justify-center">
+            <img src="/assets/svg/Map Point Wave.svg" alt="">
+            <p>شیراز</p>
+          </span>
+        </div>
+        <div class="w-[615px] h-fit flex flex-col mr-[200px] mt-5">
+          <h2 class="text-white text-[24px] font-medium">درباره من:</h2>
+          <p class="text-white text-[16px] leading-10 mt-3">من یک طراح رابط کاربری و توسعه‌دهنده فرانت‌اند با بیش از ۳ سال تجربه در طراحی و پیاده‌سازی وب‌سایت‌های مدرن و کاربرمحور هستم. تخصص من ترکیب خلاقیت با منطق کدنویسی برای خلق تجربه‌های دیجیتال کارآمد و زیباست.  </p>
+          <p class="text-white text-[16px] leading-10">در پروژه‌های مختلف با تیم‌های طراحی، توسعه و بازاریابی همکاری کرده‌ام و تمرکز اصلی‌ام همیشه روی سادگی، دسترسی‌پذیری و بهینه‌سازی تجربه کاربری بوده است.</p>
+        </div>
+      </section>
+    </header>
+    <main>
+      <!-- ----------همکاری ها ----------- -->
+      <section class="mx-auto md:w-[1041px]">
+        <div
+          class="w-[98%] md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]"
+        >
+          <h2
+            class="text-[24px] md:w-[125px] font-[600] md:leading-[28px] my-auto mr-4"
+          >
+          همکاری ها
+          </h2>
+          <a
+            class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
+            href="#"
+            >مشاهده همه</a
+          >
+        </div>
+      </section>
+      <section class="w-[95%] mb-[96px] md:w-[1040px]  mx-auto">
+        <div class="flex flex-col md:flex-row gap-[41px]">
+          <div
+            class="bg-[#1C1E26]  md:mx-0 md:w-[500px] md:h-[300px] pb-2 flex flex-row rounded-lg overflow-hidden shadow-bs"
+          >
+            <div class="w-[180px] md:w-[224px]">
+              <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
+                عنوان پروژه
+              </h3>
+              <p
+                class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4"
+              >
+                زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
+                یک متن نهایتن دو خطی که پروژه رو توصیف کنه
+              </p>
+              <button
+                class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[57px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+                type="button"
+              >
+                مشاهده جزئیات
+              </button>
+            </div>
+            <div class="flex flex-col justify-between">
+              <div class="relative">
+                <img
+                  class=" h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
+                  src="/assets/Image.png"
+                  alt=""
+                />
+                <img
+                  class="w-5 h-5 absolute top-3 left-3"
+                  src="/assets/svg/tik.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-row gap-[17px] mr-2">
+                <div class="flex flex-col gap-2">
+                  <img class="w-[19.5px] h-[19.5px] md:w-6 md:h-6" src="/assets/svg/Icon-3.svg" alt="" />
+                  <img class="w-[83.2px] h-[25.6px] md:w-[104px] md:h-8" src="/assets/Members.png" alt="" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <img
+                    class="w-5 h-5 md:w-6 md:h-6"
+                    src="/assets/svg/Memory Icon.svg"
+                    alt=""
+                  />
+                  <img class="w-[100.4px] h-[25.6px] md:w-[125px] md:h-8" src="/assets/Bottom.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#1C1E26] w-full  md:w-[500px] md:h-[300px] flex flex-row rounded-lg pb-2 overflow-hidden shadow-bs"
+          >
+            <div class="w-[180px] md:w-[224px]">
+              <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
+                عنوان پروژه
+              </h3>
+              <p
+                class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4"
+              >
+                زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
+                یک متن نهایتن دو خطی که پروژه رو توصیف کنه
+              </p>
+              <button
+                class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[57px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+                type="button"
+              >
+                مشاهده جزئیات
+              </button>
+            </div>
+            <div class="flex flex-col justify-between">
+              <div class="relative">
+                <img
+                  class=" h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
+                  src="/assets/Image.png"
+                  alt=""
+                />
+                <img
+                  class="w-5 h-5 absolute top-3 left-3"
+                  src="/assets/svg/tik.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-row gap-[17px] mr-2">
+                <div class="flex flex-col gap-2">
+                  <img class="w-[19.5px] h-[19.5px] md:w-6 md:h-6" src="/assets/svg/Icon-3.svg" alt="" />
+                  <img class="w-[83.2px] h-[25.6px] md:w-[104px] md:h-8" src="/assets/Members.png" alt="" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <img
+                    class="w-5 h-5 md:w-6 md:h-6"
+                    src="/assets/svg/Memory Icon.svg"
+                    alt=""
+                  />
+                  <img class="w-[100.4px] h-[25.6px] md:w-[125px] md:h-8" src="/assets/Bottom.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ------------مهارت ها-------------- -->
+      <section class="md:w-[1041px] mx-auto">
+        <section class="">
+          <div
+            class="w-[98%] md:w-[100%]  h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]"
+          >
+            <h2
+              class="text-[24px] md:w-[125px] font-[600] md:leading-[28px] my-auto mr-4"
+            >
+            مهارت ها
+            </h2>
+            <a
+              class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
+              href="#"
+              >مشاهده همه</a
+            >
+          </div>
+        </section>
+        <section class=" grid grid-cols-3 gap-x-[70px] gap-y-6">
+          <div class="w-[300px] h-[300px] flex justify-center items-center bg-white/10 backdrop-blur-md rounded-lg">
+            <div class="w-[290px] h-[290px] bg-background flex flex-col justify-center items-center gap-6 rounded-lg">
+              <h3 class="text-white text-[24px] font-bold ">FIGMA</h3>
+              <img class="w-[120px] h-[120px]" src="/assets/svg/figma-original.svg" alt="">
+              <div class="flex gap-3">
+                <div class="w-[70px] h-[10px] bg-gray-700"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-[300px] h-[300px] flex justify-center items-center bg-white/10 backdrop-blur-md rounded-lg">
+            <div class="w-[290px] h-[290px] bg-background flex flex-col justify-center items-center gap-6 rounded-lg">
+              <h3 class="text-white text-[24px] font-bold ">FIGMA</h3>
+              <img class="w-[120px] h-[120px]" src="/assets/svg/figma-original.svg" alt="">
+              <div class="flex gap-3">
+                <div class="w-[70px] h-[10px] bg-gray-700"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-[300px] h-[300px] flex justify-center items-center bg-white/10 backdrop-blur-md rounded-lg">
+            <div class="w-[290px] h-[290px] bg-background flex flex-col justify-center items-center gap-6 rounded-lg">
+              <h3 class="text-white text-[24px] font-bold ">FIGMA</h3>
+              <img class="w-[120px] h-[120px]" src="/assets/svg/figma-original.svg" alt="">
+              <div class="flex gap-3">
+                <div class="w-[70px] h-[10px] bg-gray-700"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-[300px] h-[300px] flex justify-center items-center bg-white/10 backdrop-blur-md rounded-lg">
+            <div class="w-[290px] h-[290px] bg-background flex flex-col justify-center items-center gap-6 rounded-lg">
+              <h3 class="text-white text-[24px] font-bold ">FIGMA</h3>
+              <img class="w-[120px] h-[120px]" src="/assets/svg/figma-original.svg" alt="">
+              <div class="flex gap-3">
+                <div class="w-[70px] h-[10px] bg-gray-700"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-[300px] h-[300px] flex justify-center items-center bg-white/10 backdrop-blur-md rounded-lg">
+            <div class="w-[290px] h-[290px] bg-background flex flex-col justify-center items-center gap-6 rounded-lg">
+              <h3 class="text-white text-[24px] font-bold ">FIGMA</h3>
+              <img class="w-[120px] h-[120px]" src="/assets/svg/figma-original.svg" alt="">
+              <div class="flex gap-3">
+                <div class="w-[70px] h-[10px] bg-gray-700"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-[300px] h-[300px] flex justify-center items-center bg-white/10 backdrop-blur-md rounded-lg">
+            <div class="w-[290px] h-[290px] bg-background flex flex-col justify-center items-center gap-6 rounded-lg">
+              <h3 class="text-white text-[24px] font-bold ">FIGMA</h3>
+              <img class="w-[120px] h-[120px]" src="/assets/svg/figma-original.svg" alt="">
+              <div class="flex gap-3">
+                <div class="w-[70px] h-[10px] bg-gray-700"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+                <div class="w-[70px] h-[10px] bg-purple-500"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <h3></h3>
   </body>
 </html>
