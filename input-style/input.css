@@ -15,6 +15,8 @@
   --color-purple-800: #424299;
   --color-gray-700: #696969;
   --color-blue-box: #24A1DE	; 
+  --color-bg-footer: #1C1E26;
+  --color-text-footer: #8C94A3;
 
   --inset-shadow-bt: inset -2px 2px 8px rgb(0, 0, 0, 0.25);
   --shadow-bt: 0 2px 4px rgb(0, 0, 0, 0.25);
