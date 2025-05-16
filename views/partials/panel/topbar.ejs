@@ -1,9 +1,12 @@
-<nav
-  class="md:hidden text-black flex justify-between items-center mx-[16px] my-[24px]"
->
-  <button id="sidebar-open-btn">
-    <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="" />
-  </button>
+<nav class="flex justify-between items-center mx-[16px] my-[24px] bg-dark600 text-dark-50 px-4 py-6 rounded-lg">
+  <div class="flex items-center gap-x-4">
+    <button id="sidebar-open-btn" class="md:hidden">
+      <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="" />
+    </button>
+    <h3 class="text-lg font-bold">
+      <%= headerTitle %>
+    </h3>
+  </div>
   <!-- <div class="mb-1">
     <img
       class="w-[106px] md:w-[312px] md:h-[337px] md:mr-[55px]"

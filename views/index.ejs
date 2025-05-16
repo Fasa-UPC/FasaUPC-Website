@@ -1,677 +1,501 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <!-- <style type="text/tailwindcss">
-    </style> -->
-  </head>
 
-  <body
-    class="bg-background text-white font-Vazirmatn overflow-x-hidden cursor-default"
-  >
-    <!-- navbar-deckstop-start-->
-    <nav
-      class="hidden md:flex md:justify-center md:items-center md:my-[30px] md:mx-auto z-50"
-    >
-      <div class="">
-        <img class="w-[106px] h-[115px]" src="/assets/logo2.png" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <!-- <style type="text/tailwindcss">
+    </style> -->
+</head>
+
+<body class="bg-background text-white font-Vazirmatn overflow-x-hidden cursor-default">
+  <!-- navbar-deckstop-start-->
+  <nav class="hidden md:flex md:justify-center md:items-center md:my-[30px] md:mx-auto z-50">
+    <div class="">
+      <img class="w-[106px] h-[115px]" src="/assets/logo2.png" alt="" />
+    </div>
+    <div class="flex gap-[20px] mr-[40px] ml-[421px]">
+      <a class="text-[18px] font-bold hover: transition duration-300 ease-in-out cursor-pointer">خانه</a>
+      <a class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer">پروژه ها</a>
+      <a class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer">اعضا</a>
+      <a class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer">درباره ی ما</a>
+      <a class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer">ارتباط با ما</a>
+    </div>
+    <div class="">
+      <button
+        class="bg-purple-500 text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center transition duration-300 ease-in-out cursor-pointer hover:bg-purple-600"
+        type="button" id="signin-signup-btn">
+        ورود / ثبت نام
+      </button>
+    </div>
+  </nav>
+  <!-- navbar-deckstop-end-->
+  <header class="header overflow-x-hidden relative">
+    <!-- navbar-start-mobil-->
+    <nav class="md:hidden text-black flex justify-between items-center mx-[16px] my-[24px]">
+      <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="">
+      <div class="mb-1">
+        <img class=" w-[106px] md:w-[312px] md:h-[337px] md:mr-[55px]" src="/assets/Vector.svg" alt="">
       </div>
-      <div class="flex gap-[20px] mr-[40px] ml-[421px]">
-        <a
-          class="text-[18px] font-bold hover: transition duration-300 ease-in-out cursor-pointer"
-          >خانه</a
-        >
-        <a
-          class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
-          >پروژه ها</a
-        >
-        <a
-          class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
-          >اعضا</a
-        >
-        <a
-          class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
-          >درباره ی ما</a
-        >
-        <a
-          class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
-          >ارتباط با ما</a
-        >
-      </div>
-      <div class="">
-        <button
-          class="bg-purple-500 text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center transition duration-300 ease-in-out cursor-pointer hover:bg-purple-600"
-          type="button"
-        >
-          ورود / ثبت نام
-        </button>
+      <div class="h-10 bg-purple-500 py-2 rounded-lg">
+        <img class="w-6 mx-2" src="/assets/svg/user-circle.svg" alt="">
       </div>
     </nav>
-    <!-- navbar-deckstop-end-->
-    <header class="header overflow-x-hidden relative">
-      <!-- navbar-start-mobil-->
-      <nav class="md:hidden text-black flex justify-between items-center mx-[16px] my-[24px]">
-        <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="">
-        <div class="mb-1">
-          <img class=" w-[106px] md:w-[312px] md:h-[337px] md:mr-[55px]" src="/assets/Vector.svg" alt="">
-        </div>
-        <div class="h-10 bg-purple-500 py-2 rounded-lg">
-          <img class="w-6 mx-2" src="/assets/svg/user-circle.svg" alt="">
-        </div>   
-      </nav>
-      <!-- navbar-end-mobil -->
-      <div class="relative ">
-        <div
-          class="absolute top-[356px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
-        ></div>
-        <div
-          class="absolute top-[173px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
-        ></div>
+    <!-- navbar-end-mobil -->
+    <div class="relative ">
+      <div
+        class="absolute top-[356px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10">
       </div>
-      <section
-        class="md:flex md:flex-row-reverse md:justify-center md:mt-[96px] md:mx-auto"
-      >
-        
-        <div class="justify-items-center mb-1">
-          <img
-            class="hidden md:block md:w-[312px] md:h-[337px] md:mr-[55px]"
-            src="/assets/Vector.svg"
-            alt=""
-          />
-        </div>
-        <div class="md:w-[709px] md:h-[571px]">
-          
-          <div class="mt-10 mx-[16px]">
-            <h1
-              class="text-white text-4xl font-[700] text-wrap mb-[36px] leading-16 md:text-[57px] md:leading-[85.5px] md:w-[678px] md:h-[171px]"
-            >
-              <span class="text-purple-500">کمیته‌ی برنامه‌نویسان</span>
-              ، جایی برای یادگیری و رشد!
-            </h1>
-            <p
-              class="text-[20px] md:text-[24px] leading-[45px] md:text-[#E2E2DC] font-[300]"
-            >
-              فرقی نمی‌کنه که تازه‌کار باشی یا حرفه‌ای، در کمیته برنامه‌نویسان
-              می‌تونی دانش خودت رو گسترش بدی، دوستان جدید پیدا کنی و در
-              پروژه‌های جذاب شرکت کنی!
-            </p>
-          </div>
-          <div class="flex my-[48px] gap-5 justify-center md:justify-start md:mr-[15px] mb-[100px] md:mt-[24px] ">
-            <button class="w-50 h-[40px] bg-purple-500 text-[18px] font-[700] rounded-md text-center md:text-[18px] md:font-normal md:h-[46px] md:w-[220px] md:py-[10px] hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer" type="button">
-            عضو کمیته میشوم
-            </button>
-            <button class="font-bold w-[160px] h-[40px] rounded-md border-2 border-purple-500 md:text-[18px] md:font-normal md:h-[46px] md:w-[180px] hover:bg-purple-500/5 transition duration-300 ease-in-out cursor-pointer" type="button">
-            مورد کمیته</button>
-        </div>
-        </div>
-      </section>
-      <div class="flex-col justify-items-center mt-[50px]">
-        <a class="block text-dark100 pb-[12px]">برو به پایین</a>
-        <img src="/assets/Group.svg" alt="" />
+      <div
+        class="absolute top-[173px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10">
       </div>
-    </header>
-    <!-- ---------------- -->
-    <main class="overflow-x-hidden relative">
-      <div class="relative ">
-        <div
-          class="absolute top-[517px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
-        ></div>
-        <div
-          class="absolute top-[673px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
-        ></div>
-      </div>
-      <div class=" flex flex-col gap-3 absolute top-[1500px] md:top-[900px] -right-[400px] md:-right-[100px] -z-10 -rotate-45 md:-rotate-10">
-        <div
-        class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "
-        ></div>
-        <div
-        class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "
-        ></div>
-        <div
-        class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "
-        ></div>
-      </div>
-      <section class="md:flex md:relative justify-center">
-        <div
-          class="hidden md:block absolute top-[115px] w-full h-[1px] border-1 border-[#53555E] border-dashed -z-10"
-        ></div>
+    </div>
+    <section class="md:flex md:flex-row-reverse md:justify-center md:mt-[96px] md:mx-auto">
 
-        <div
-          class="flex flex-row-reverse justify-around items-center mt-4 word-wrap bg-dark800 w-full md:w-[445px] h-[210px] rounded-lg shadow-[0_0_8px_rgb(255,255,255,0.25)] "
-        >
-          <div class="flex flex-col justify-center items-center gap-3">
-            <img class="w-12 h-12" src="/assets/svg/Frame.svg" alt="" />
-            <span class="text-[16px] font-[400]">اعضا</span>
-            <span class="text-[20px] font-[900]"><%= devsCount %></span>
-          </div>
-          <hr class="w-[2px] h-[25px] bg-white" />
-          <div class="flex flex-col justify-center items-center gap-3">
-            <img src="/assets/svg/Frame-1.svg" alt="" />
-            <p class="text-[16px] font-[400]">مقالات</p>
-            <p class="text-[20px] font-[900]">100+</p>
-          </div>
-          <hr class="w-[2px] h-[25px] bg-white" />
-          <div class="flex flex-col justify-center items-center gap-3">
-            <img src="/assets/svg/Frame-2.svg" alt="" />
-            <p class="text-[16px] font-[400]">پروژهها</p>
-            <p class="text-[20px] font-[900]"><%= projsCount %></p>
-          </div>
-        </div>
-      </section>
+      <div class="justify-items-center mb-1">
+        <img class="hidden md:block md:w-[312px] md:h-[337px] md:mr-[55px]" src="/assets/Vector.svg" alt="" />
+      </div>
+      <div class="md:w-[709px] md:h-[571px]">
 
-      <section class="md:flex justify-center">
-        <div
-          class="flex flex-col items-center gap-[16px] mt-[74px] md:flex-row md:gap-[24px] md:w-[1041px] md:flex-wrap md:justify-center"
-        >
-          <div
-            class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600 md:w-[331px] md:h-[280px]"
-          >
-            <h3
-              class="w-[170px] border-b-[0.5px] m-3 text-[16px] font-[400] md:w-[306px] md:h-[74px] md:border-b-2 md:border-[#53555E] md:text-[22px] md:font-[20px]"
-            >
-              یه عنوان جو صمیمی کمیته
-            </h3>
-            <p
-              class="px-2.5 mt-1 text-[14px] text-[#BCBDC1] md:w-[307px] md:text-[16px] md:leading-[32px] md:font-[300]"
-            >
-              یه متن کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن
-              کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن کوتاه در
-              توضیح عنوان یه متن کوتاه در توضیح عنوان
-            </p>
-          </div>
-          <div
-            class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600 md:w-[331px] md:h-[280px]"
-          >
-            <h3
-              class="w-[267px] border-b-[0.5px] m-3 text-[16px] font-[20px] md:w-[306px] md:h-[74px] md:border-b-2 md:border-[#53555E] md:text-[22px] md:font-[400] md:leading-[33px]"
-            >
-              یه عنوان برای محیط پویا و فرصت های رشد
-            </h3>
-            <p
-              class="px-2.5 mt-1 text-[14px] text-[#BCBDC1] md:w-[307px] md:text-[16px] md:leading-[32px] md:font-[300]"
-            >
-              یه متن کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن
-              کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن کوتاه در
-              توضیح عنوان یه متن کوتاه در توضیح عنوان
-            </p>
-          </div>
-          <div
-            class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600 md:w-[331px] md:h-[280px]"
-          >
-            <h3
-              class="w-[330px] border-b-[0.5px] m-3 text-[16px] font-[20px] md:w-[306px] md:h-[74px] md:border-b-2 md:border-[#53555E] md:text-[22px] md:font-[400] md:leading-[33px]"
-            >
-              یه عنوان برای شرکت توی پروژه های مختلف و چالشی
-            </h3>
-            <p
-              class="px-2.5 mt-1 text-[14px] text-[#BCBDC1] md:w-[307px] md:text-[16px] md:leading-[32px] md:font-[300]"
-            >
-              یه متن کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن
-              کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن کوتاه در
-              توضیح عنوان یه متن کوتاه در توضیح عنوان
-            </p>
-          </div>
+        <div class="mt-10 mx-[16px]">
+          <h1
+            class="text-white text-4xl font-[700] text-wrap mb-[36px] leading-16 md:text-[57px] md:leading-[85.5px] md:w-[678px] md:h-[171px]">
+            <span class="text-purple-500">کمیته‌ی برنامه‌نویسان</span>
+            ، جایی برای یادگیری و رشد!
+          </h1>
+          <p class="text-[20px] md:text-[24px] leading-[45px] md:text-[#E2E2DC] font-[300]">
+            فرقی نمی‌کنه که تازه‌کار باشی یا حرفه‌ای، در کمیته برنامه‌نویسان
+            می‌تونی دانش خودت رو گسترش بدی، دوستان جدید پیدا کنی و در
+            پروژه‌های جذاب شرکت کنی!
+          </p>
+        </div>
+        <div class="flex my-[48px] gap-5 justify-center md:justify-start md:mr-[15px] mb-[100px] md:mt-[24px] ">
           <button
-            type="button"
-            class="bg-purple-500 text-[14px] font-bold w-[160px] h-[36px] rounded-md pb-[8px] pt-[8px] mx-[16px] text-center md:w-[306px] md:h-[40px] md:justify-center hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer"
-          >
+            class="w-50 h-[40px] bg-purple-500 text-[18px] font-[700] rounded-md text-center md:text-[18px] md:font-normal md:h-[46px] md:w-[220px] md:py-[10px] hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer"
+            type="button">
             عضو کمیته میشوم
           </button>
+          <button
+            class="font-bold w-[160px] h-[40px] rounded-md border-2 border-purple-500 md:text-[18px] md:font-normal md:h-[46px] md:w-[180px] hover:bg-purple-500/5 transition duration-300 ease-in-out cursor-pointer"
+            type="button">
+            مورد کمیته</button>
         </div>
-      </section>
-      <!-- ------ بخش پروژه ها-------- -->
-      <section class="mx-auto md:w-[1041px]">
-        
+      </div>
+    </section>
+    <div class="flex-col justify-items-center mt-[50px]">
+      <a class="block text-dark100 pb-[12px]">برو به پایین</a>
+      <img src="/assets/Group.svg" alt="" />
+    </div>
+  </header>
+  <!-- ---------------- -->
+  <main class="overflow-x-hidden relative">
+    <div class="relative ">
+      <div
+        class="absolute top-[517px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10">
+      </div>
+      <div
+        class="absolute top-[673px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10">
+      </div>
+    </div>
+    <div
+      class=" flex flex-col gap-3 absolute top-[1500px] md:top-[900px] -right-[400px] md:-right-[100px] -z-10 -rotate-45 md:-rotate-10">
+      <div class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "></div>
+      <div class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "></div>
+      <div class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "></div>
+    </div>
+    <section class="md:flex md:relative justify-center">
+      <div class="hidden md:block absolute top-[115px] w-full h-[1px] border-1 border-[#53555E] border-dashed -z-10">
+      </div>
+
+      <div
+        class="flex flex-row-reverse justify-around items-center mt-4 word-wrap bg-dark800 w-full md:w-[445px] h-[210px] rounded-lg shadow-[0_0_8px_rgb(255,255,255,0.25)] ">
+        <div class="flex flex-col justify-center items-center gap-3">
+          <img class="w-12 h-12" src="/assets/svg/Frame.svg" alt="" />
+          <span class="text-[16px] font-[400]">اعضا</span>
+          <span class="text-[20px] font-[900]">
+            <%= devsCount %>
+          </span>
+        </div>
+        <hr class="w-[2px] h-[25px] bg-white" />
+        <div class="flex flex-col justify-center items-center gap-3">
+          <img src="/assets/svg/Frame-1.svg" alt="" />
+          <p class="text-[16px] font-[400]">مقالات</p>
+          <p class="text-[20px] font-[900]">100+</p>
+        </div>
+        <hr class="w-[2px] h-[25px] bg-white" />
+        <div class="flex flex-col justify-center items-center gap-3">
+          <img src="/assets/svg/Frame-2.svg" alt="" />
+          <p class="text-[16px] font-[400]">پروژهها</p>
+          <p class="text-[20px] font-[900]">
+            <%= projsCount %>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:flex justify-center">
+      <div
+        class="flex flex-col items-center gap-[16px] mt-[74px] md:flex-row md:gap-[24px] md:w-[1041px] md:flex-wrap md:justify-center">
         <div
-          class="w-[98%] md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]"
-        >
-          <h2
-            class="text-[24px] md:w-[125px] font-[600] md:leading-[28px] my-auto mr-4"
-          >
-            پروژه ها
-          </h2>
-          <a
-            class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
-            href="#"
-            >مشاهده همه</a
-          >
+          class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600 md:w-[331px] md:h-[280px]">
+          <h3
+            class="w-[170px] border-b-[0.5px] m-3 text-[16px] font-[400] md:w-[306px] md:h-[74px] md:border-b-2 md:border-[#53555E] md:text-[22px] md:font-[20px]">
+            یه عنوان جو صمیمی کمیته
+          </h3>
+          <p class="px-2.5 mt-1 text-[14px] text-[#BCBDC1] md:w-[307px] md:text-[16px] md:leading-[32px] md:font-[300]">
+            یه متن کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن
+            کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن کوتاه در
+            توضیح عنوان یه متن کوتاه در توضیح عنوان
+          </p>
         </div>
-      </section>
-      <section class="w-[95%] mb-[96px] md:w-[1040px]  mx-auto">
-        <div class="flex flex-col md:flex-row gap-[41px]">
-          <div
-            class="bg-[#1C1E26]  md:mx-0 md:w-[500px] md:h-[300px] pb-2 flex flex-row rounded-lg overflow-hidden shadow-bs"
-          >
-            <div class="w-[180px] md:w-[224px]">
-              <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
-                عنوان پروژه
-              </h3>
-              <p
-                class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4"
-              >
-                زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
-                یک متن نهایتن دو خطی که پروژه رو توصیف کنه
-              </p>
-              <button
-                class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[57px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
-                type="button"
-              >
-                مشاهده جزئیات
-              </button>
+        <div
+          class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600 md:w-[331px] md:h-[280px]">
+          <h3
+            class="w-[267px] border-b-[0.5px] m-3 text-[16px] font-[20px] md:w-[306px] md:h-[74px] md:border-b-2 md:border-[#53555E] md:text-[22px] md:font-[400] md:leading-[33px]">
+            یه عنوان برای محیط پویا و فرصت های رشد
+          </h3>
+          <p class="px-2.5 mt-1 text-[14px] text-[#BCBDC1] md:w-[307px] md:text-[16px] md:leading-[32px] md:font-[300]">
+            یه متن کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن
+            کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن کوتاه در
+            توضیح عنوان یه متن کوتاه در توضیح عنوان
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-baseline w-[389px] h-[157px] rounded-2xl bg-dark600 md:w-[331px] md:h-[280px]">
+          <h3
+            class="w-[330px] border-b-[0.5px] m-3 text-[16px] font-[20px] md:w-[306px] md:h-[74px] md:border-b-2 md:border-[#53555E] md:text-[22px] md:font-[400] md:leading-[33px]">
+            یه عنوان برای شرکت توی پروژه های مختلف و چالشی
+          </h3>
+          <p class="px-2.5 mt-1 text-[14px] text-[#BCBDC1] md:w-[307px] md:text-[16px] md:leading-[32px] md:font-[300]">
+            یه متن کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن
+            کوتاه در توضیح عنوان یه متن کوتاه در توضیح عنوان یه متن کوتاه در
+            توضیح عنوان یه متن کوتاه در توضیح عنوان
+          </p>
+        </div>
+        <button type="button"
+          class="bg-purple-500 text-[14px] font-bold w-[160px] h-[36px] rounded-md pb-[8px] pt-[8px] mx-[16px] text-center md:w-[306px] md:h-[40px] md:justify-center hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer">
+          عضو کمیته میشوم
+        </button>
+      </div>
+    </section>
+    <!-- ------ بخش پروژه ها-------- -->
+    <section class="mx-auto md:w-[1041px]">
+
+      <div
+        class="w-[98%] md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]">
+        <h2 class="text-[24px] md:w-[125px] font-[600] md:leading-[28px] my-auto mr-4">
+          پروژه ها
+        </h2>
+        <a class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
+          href="#">مشاهده همه</a>
+      </div>
+    </section>
+    <section class="w-[95%] mb-[96px] md:w-[1040px]  mx-auto">
+      <div class="flex flex-col md:flex-row gap-[41px]">
+        <div
+          class="bg-[#1C1E26]  md:mx-0 md:w-[500px] md:h-[300px] pb-2 flex flex-row rounded-lg overflow-hidden shadow-bs">
+          <div class="w-[180px] md:w-[224px]">
+            <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
+              عنوان پروژه
+            </h3>
+            <p class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4">
+              زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
+              یک متن نهایتن دو خطی که پروژه رو توصیف کنه
+            </p>
+            <button
+              class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[57px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+              type="button">
+              مشاهده جزئیات
+            </button>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="relative">
+              <img class=" h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
+                src="/assets/Image.png" alt="" />
+              <img class="w-5 h-5 absolute top-3 left-3" src="/assets/svg/tik.svg" alt="" />
             </div>
-            <div class="flex flex-col justify-between">
-              <div class="relative">
-                <img
-                  class=" h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
-                  src="/assets/Image.png"
-                  alt=""
-                />
-                <img
-                  class="w-5 h-5 absolute top-3 left-3"
-                  src="/assets/svg/tik.svg"
-                  alt=""
-                />
+            <div class="flex flex-row gap-[17px] mr-2">
+              <div class="flex flex-col gap-2">
+                <img class="w-[19.5px] h-[19.5px] md:w-6 md:h-6" src="/assets/svg/Icon-3.svg" alt="" />
+                <img class="w-[83.2px] h-[25.6px] md:w-[104px] md:h-8" src="/assets/Members.png" alt="" />
               </div>
-              <div class="flex flex-row gap-[17px] mr-2">
-                <div class="flex flex-col gap-2">
-                  <img class="w-[19.5px] h-[19.5px] md:w-6 md:h-6" src="/assets/svg/Icon-3.svg" alt="" />
-                  <img class="w-[83.2px] h-[25.6px] md:w-[104px] md:h-8" src="/assets/Members.png" alt="" />
-                </div>
-                <div class="flex flex-col gap-2">
-                  <img
-                    class="w-5 h-5 md:w-6 md:h-6"
-                    src="/assets/svg/Memory Icon.svg"
-                    alt=""
-                  />
-                  <img class="w-[100.4px] h-[25.6px] md:w-[125px] md:h-8" src="/assets/Bottom.png" alt="" />
-                </div>
+              <div class="flex flex-col gap-2">
+                <img class="w-5 h-5 md:w-6 md:h-6" src="/assets/svg/Memory Icon.svg" alt="" />
+                <img class="w-[100.4px] h-[25.6px] md:w-[125px] md:h-8" src="/assets/Bottom.png" alt="" />
               </div>
             </div>
           </div>
-          <div
-            class="bg-[#1C1E26] w-full  md:w-[500px] md:h-[300px] flex flex-row rounded-lg pb-2 overflow-hidden shadow-bs"
-          >
-            <div class="w-[180px] md:w-[224px]">
-              <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
-                عنوان پروژه
-              </h3>
-              <p
-                class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4"
-              >
-                زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
-                یک متن نهایتن دو خطی که پروژه رو توصیف کنه
-              </p>
-              <button
-                class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[57px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
-                type="button"
-              >
-                مشاهده جزئیات
-              </button>
+        </div>
+        <div
+          class="bg-[#1C1E26] w-full  md:w-[500px] md:h-[300px] flex flex-row rounded-lg pb-2 overflow-hidden shadow-bs">
+          <div class="w-[180px] md:w-[224px]">
+            <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
+              عنوان پروژه
+            </h3>
+            <p class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4">
+              زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
+              یک متن نهایتن دو خطی که پروژه رو توصیف کنه
+            </p>
+            <button
+              class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[57px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+              type="button">
+              مشاهده جزئیات
+            </button>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="relative">
+              <img class=" h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
+                src="/assets/Image.png" alt="" />
+              <img class="w-5 h-5 absolute top-3 left-3" src="/assets/svg/tik.svg" alt="" />
             </div>
-            <div class="flex flex-col justify-between">
-              <div class="relative">
-                <img
-                  class=" h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
-                  src="/assets/Image.png"
-                  alt=""
-                />
-                <img
-                  class="w-5 h-5 absolute top-3 left-3"
-                  src="/assets/svg/tik.svg"
-                  alt=""
-                />
+            <div class="flex flex-row gap-[17px] mr-2">
+              <div class="flex flex-col gap-2">
+                <img class="w-[19.5px] h-[19.5px] md:w-6 md:h-6" src="/assets/svg/Icon-3.svg" alt="" />
+                <img class="w-[83.2px] h-[25.6px] md:w-[104px] md:h-8" src="/assets/Members.png" alt="" />
               </div>
-              <div class="flex flex-row gap-[17px] mr-2">
-                <div class="flex flex-col gap-2">
-                  <img class="w-[19.5px] h-[19.5px] md:w-6 md:h-6" src="/assets/svg/Icon-3.svg" alt="" />
-                  <img class="w-[83.2px] h-[25.6px] md:w-[104px] md:h-8" src="/assets/Members.png" alt="" />
-                </div>
-                <div class="flex flex-col gap-2">
-                  <img
-                    class="w-5 h-5 md:w-6 md:h-6"
-                    src="/assets/svg/Memory Icon.svg"
-                    alt=""
-                  />
-                  <img class="w-[100.4px] h-[25.6px] md:w-[125px] md:h-8" src="/assets/Bottom.png" alt="" />
-                </div>
+              <div class="flex flex-col gap-2">
+                <img class="w-5 h-5 md:w-6 md:h-6" src="/assets/svg/Memory Icon.svg" alt="" />
+                <img class="w-[100.4px] h-[25.6px] md:w-[125px] md:h-8" src="/assets/Bottom.png" alt="" />
               </div>
             </div>
           </div>
         </div>
-      </section>
-        <!-- -------------بخش اعضای منتخب ---------------- -->
-      <section class="w-[98%] mx-auto md:w-[1041px] ">
+      </div>
+    </section>
+    <!-- -------------بخش اعضای منتخب ---------------- -->
+    <section class="w-[98%] mx-auto md:w-[1041px] ">
+      <div
+        class=" md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]">
+        <h2 class=" md:w-fit text-[24px] font-[600] leading-[28px] my-auto mr-4">
+          اعضای منتخب
+        </h2>
+        <a class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
+          href="#">مشاهده همه</a>
+      </div>
+    </section>
+    <div class="w-[95%] md:w-[1041px] mx-auto flex flex-col md:flex-row gap-[41px]">
+      <div class="bg-[#1C1E26] h-[240px]  md:w-[500px] md:h-[300px] flex flex-row rounded-lg overflow-hidden shadow-bs">
+        <div class="w-[180px] md:w-[224px]">
+          <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
+            جان دوو
+          </h3>
+          <p class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4">
+            زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
+            یک متن نهایتن دو خطی که پروژه رو توصیف کنه
+          </p>
+          <button
+            class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[50px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+            type="button">
+            مشاهده رزومه
+          </button>
+        </div>
+        <div>
+          <span class="relative">
+            <img class="h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
+              src="/assets/Image.png" alt="" />
+            <span
+              class="flex gap-[1px] bg-[#1C1E26] absolute top-2 left-2 md:top-3 md:left-3 pt-1.5 pb-1 px-2 rounded-full">
+              <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
+              <img src="/assets/Stars.svg" alt="" />
+            </span>
+          </span>
+          <div class="flex flex-row gap-[17px]">
+            <div class="flex flex-col gap-2 mr-10">
+              <img class="w-6 h-6" src="/assets/svg/Collection Icon.svg" alt="" />
+              <span>3 پروژه</span>
+            </div>
+            <div class="flex flex-col gap-2 mr-12">
+              <img class="w-6 h-6" src="/assets/svg/Memory Icon.svg" alt="" />
+              <span>4 تکنولوژی</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#1C1E26]  h-[240px] md:w-[500px] md:h-[300px] flex flex-row rounded-lg overflow-hidden shadow-bs">
+        <div class="w-[180px] md:w-[224px]">
+          <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
+            جان دوو
+          </h3>
+          <p class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4">
+            زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
+            یک متن نهایتن دو خطی که پروژه رو توصیف کنه
+          </p>
+          <button
+            class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[50px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+            type="button">
+            مشاهده رزومه
+          </button>
+        </div>
+        <div>
+          <span class="relative">
+            <img class="h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
+              src="/assets/Image.png" alt="" />
+            <span
+              class="flex gap-[1px] bg-[#1C1E26] absolute top-2 left-2 md:top-3 md:left-3 pt-1.5 pb-1 px-2 rounded-full">
+              <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
+              <img src="/assets/Stars.svg" alt="" />
+            </span>
+          </span>
+          <div class="flex flex-row gap-[17px]">
+            <div class="flex flex-col gap-2 mr-10">
+              <img class="w-6 h-6" src="/assets/svg/Collection Icon.svg" alt="" />
+              <span>3 پروژه</span>
+            </div>
+            <div class="flex flex-col gap-2 mr-12">
+              <img class="w-6 h-6" src="/assets/svg/Memory Icon.svg" alt="" />
+              <span>4 تکنولوژی</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -----------بخش تیم ها----------- -->
+    <section class="relative overflow-x-hidden md:overflow-visible pb-3">
+      <div class="relative">
         <div
-          class=" md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]"
-        >
-          <h2
-            class=" md:w-fit text-[24px] font-[600] leading-[28px] my-auto mr-4"
-          >
-            اعضای منتخب
+          class="absolute top-[10px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10">
+        </div>
+        <div
+          class="absolute top-[200px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10">
+        </div>
+      </div>
+      <div
+        class=" flex flex-col gap-3 absolute top-[100px] md:top-[300px] -right-[400px] md:-right-10 -z-10 rotate-45 md:rotate-10">
+        <div class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "></div>
+        <div class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "></div>
+        <div class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "></div>
+      </div>
+      <section class="w-[98%] mx-auto md:w-[1041px]">
+        <div
+          class=" md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]">
+          <h2 class=" md:w-fit text-[24px] font-[600] leading-[28px] my-auto mr-4">
+            تیم ها
           </h2>
-          <a
-            class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
-            href="#"
-            >مشاهده همه</a
-          >
+          <a class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
+            href="#">مشاهده همه</a>
         </div>
       </section>
       <div class="w-[95%] md:w-[1041px] mx-auto flex flex-col md:flex-row gap-[41px]">
-        <div
-          class="bg-[#1C1E26] h-[240px]  md:w-[500px] md:h-[300px] flex flex-row rounded-lg overflow-hidden shadow-bs"
-        >
-          <div class="w-[180px] md:w-[224px]">
-            <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
-              جان دوو
-            </h3>
-            <p
-              class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4"
-            >
-              زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
-              یک متن نهایتن دو خطی که پروژه رو توصیف کنه
-            </p>
-            <button
-              class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[50px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
-              type="button"
-            >
-              مشاهده رزومه
-            </button>
-          </div>
-          <div>
-            <span class="relative">
-              <img
-                class="h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
-                src="/assets/Image.png"
-                alt=""
-              />
-              <span
-                class="flex gap-[1px] bg-[#1C1E26] absolute top-2 left-2 md:top-3 md:left-3 pt-1.5 pb-1 px-2 rounded-full"
-              >
-                <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
-                <img src="/assets/Stars.svg" alt="" />
-              </span>
+        <div class="bg-[#1C1E26] md:w-[500px] md:h-[428px] flex flex-col rounded-lg overflow-hidden shadow-bs">
+          <span class="relative">
+            <img class="w-full h-[181px] md:w-[500px] md:h-[227px] object-cover mb-[18px]" src="/assets/Image.png"
+              alt="" />
+            <span class="flex gap-[1px] bg-[#1C1E26] absolute top-3 left-3 pt-1.5 pb-1 px-2 rounded-full">
+              <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
+              <img src="/assets/Stars.svg" alt="" />
             </span>
-            <div class="flex flex-row gap-[17px]">
-              <div class="flex flex-col gap-2 mr-10">
-                <img
-                  class="w-6 h-6"
-                  src="/assets/svg/Collection Icon.svg"
-                  alt=""
-                />
-                <span>3 پروژه</span>
+          </span>
+          <h3 class="text-[#FFFFFF] text-[17.5px] md:text-[22px] font-[500] px-4 mb-[6px]">
+            عنوان تیم (تیم فرانت)
+          </h3>
+          <p class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-4">
+            زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان یک
+            متن نهایتن دو خطی که پروژه رو توصیف کنه
+          </p>
+          <div class="flex flex-row gap-[16.5px] md:gap-[21px] mb-2 mt-8 md:mt-[48px]">
+            <button
+              class=" w-[160px] md:w-[200px] md:h-[40px] text-[14.5px] md:text-[18px] border-1 border-[#6E6EFF] py-2  rounded-lg mr-[13px] md:mr-4 hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+              type="button">
+              برو به صفحه‌ی تیم
+            </button>
+            <div class="flex flex-row">
+              <div class="flex flex-col gap-2">
+                <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Icon-3.svg" alt="" />
+                <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">5 عضو</span>
               </div>
-              <div class="flex flex-col gap-2 mr-12">
-                <img
-                  class="w-6 h-6"
-                  src="/assets/svg/Memory Icon.svg"
-                  alt=""
-                />
-                <span>4 تکنولوژی</span>
+              <div class="flex flex-col gap-2 mx-[42px]">
+                <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Collection Icon.svg" alt="" />
+                <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">3 پروژه</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Memory Icon.svg" alt="" />
+                <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">4 تکنولوژی</span>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="bg-[#1C1E26]  h-[240px] md:w-[500px] md:h-[300px] flex flex-row rounded-lg overflow-hidden shadow-bs"
-        >
-          <div class="w-[180px] md:w-[224px]">
-            <h3 class="text-[#FFFFFF] text-[16px] md:text-[20px] font-[400] my-[10px] mx-[12px] md:px-4 md:my-3">
-              جان دوو
-            </h3>
-            <p
-              class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-3 md:px-4"
-            >
-              زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان
-              یک متن نهایتن دو خطی که پروژه رو توصیف کنه
-            </p>
-            <button
-              class="w-[140px] h-[32px] md:w-[200px] md:h-[40px] border-1 border-purple-500 md:py-2 rounded-lg mr-[13px] md:mr-4 mt-[50px] md:mt-[98px] hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
-              type="button"
-            >
-              مشاهده رزومه
-            </button>
-          </div>
-          <div>
-            <span class="relative">
-              <img
-                class="h-[160px] md:w-[276px] md:h-[200px] rounded-rb-lg mb-[12px] md:mb-[18px]"
-                src="/assets/Image.png"
-                alt=""
-              />
-              <span
-                class="flex gap-[1px] bg-[#1C1E26] absolute top-2 left-2 md:top-3 md:left-3 pt-1.5 pb-1 px-2 rounded-full"
-              >
-                <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
-                <img src="/assets/Stars.svg" alt="" />
-              </span>
+        <div class="bg-[#1C1E26] md:w-[500px] md:h-[428px] flex flex-col rounded-lg overflow-hidden shadow-bs">
+          <span class="relative">
+            <img class="w-full h-[181px] md:w-[500px] md:h-[227px] object-cover mb-[18px]" src="/assets/Image.png"
+              alt="" />
+            <span class="flex gap-[1px] bg-[#1C1E26] absolute top-3 left-3 pt-1.5 pb-1 px-2 rounded-full">
+              <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
+              <img src="/assets/Stars.svg" alt="" />
             </span>
-            <div class="flex flex-row gap-[17px]">
-              <div class="flex flex-col gap-2 mr-10">
-                <img
-                  class="w-6 h-6"
-                  src="/assets/svg/Collection Icon.svg"
-                  alt=""
-                />
-                <span>3 پروژه</span>
+          </span>
+          <h3 class="text-[#FFFFFF] text-[17.5px] md:text-[22px] font-[500] px-4 mb-[6px]">
+            عنوان تیم (تیم فرانت)
+          </h3>
+          <p class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-4">
+            زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان یک
+            متن نهایتن دو خطی که پروژه رو توصیف کنه
+          </p>
+          <div class="flex flex-row gap-[16.5px] md:gap-[21px] mb-2 mt-8 md:mt-[48px]">
+            <button
+              class=" w-[160px] md:w-[200px] md:h-[40px] text-[14.5px] md:text-[18px] border-1 border-[#6E6EFF] py-2  rounded-lg mr-[13px] md:mr-4 hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
+              type="button">
+              برو به صفحه‌ی تیم
+            </button>
+            <div class="flex flex-row">
+              <div class="flex flex-col gap-2">
+                <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Icon-3.svg" alt="" />
+                <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">5 عضو</span>
               </div>
-              <div class="flex flex-col gap-2 mr-12">
-                <img
-                  class="w-6 h-6"
-                  src="/assets/svg/Memory Icon.svg"
-                  alt=""
-                />
-                <span>4 تکنولوژی</span>
+              <div class="flex flex-col gap-2 mx-[42px]">
+                <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Collection Icon.svg" alt="" />
+                <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">3 پروژه</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Memory Icon.svg" alt="" />
+                <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">4 تکنولوژی</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- -----------بخش تیم ها----------- -->
-      <section class="relative overflow-x-hidden md:overflow-visible pb-3">
+    </section>
+    <!----------بخش کامنت ها---------->
+    <section class="flex justify-center mt-[128px]">
+      <div class="bg-dark600 w-[334px] h-[227px] flex flex-col gap-2.5 items-center rounded-[8px]">
+        <div class="flex justify-between mr-[16px] pt-[8px]">
+          <img class="w-[48px] h-[48px]" src="/assets/Member Avatar.png" alt="" />
+          <div class="flex flex-col gap-[4px] mr-[10px]">
+            <h3 class="text-[14px] font-medium">جان دو</h3>
+            <p class="text-[14px] text-[#9C9DA3] font-normal">
+              توسعه دهنده کمیته
+            </p>
+          </div>
+          <img class="w-[48px] h-[48px] mr-[86px]" src="/assets/Icon,,.svg" alt="" />
+        </div>
         <div class="relative">
           <div
-            class="absolute top-[10px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
-          ></div>
-          <div
-            class="absolute top-[200px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
-          ></div>
-        </div>
-        <div class=" flex flex-col gap-3 absolute top-[100px] md:top-[300px] -right-[400px] md:-right-10 -z-10 rotate-45 md:rotate-10">
-          <div
-          class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "
-          ></div>
-          <div
-          class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "
-          ></div>
-          <div
-          class="w-[2000px] h-[20px] inset-x-0 bg-[#9747FF80]/40 "
-          ></div>
-        </div>
-        <section class="w-[98%] mx-auto md:w-[1041px]">
-          <div
-            class=" md:w-[1041px] h-[69px] bg-white/10 backdrop-blur-md rounded-lg flex justify-between mx-auto mb-[32px] mt-[128px]"
-          >
-            <h2
-              class=" md:w-fit text-[24px] font-[600] leading-[28px] my-auto mr-4"
-            >
-              تیم ها
-            </h2>
-            <a
-              class="w-[112px] h-[45px] text-center items-center py-[10px] bg-purple-500 text-[16px] font-[600] my-auto ml-4 rounded-lg inset-shadow-bt shadow-bt hover:bg-purple-600 transition duration-300 ease-in-out"
-              href="#"
-              >مشاهده همه</a
-            >
+            class="w-0 h-0 border-l-[10px] border-l-transparent border-b-[8px] border-b-dark800 border-r-[10px] border-r-transparent absolute -top-[6px] right-[20px]">
           </div>
-        </section>
-        <div class="w-[95%] md:w-[1041px] mx-auto flex flex-col md:flex-row gap-[41px]">
-          <div
-            class="bg-[#1C1E26] md:w-[500px] md:h-[428px] flex flex-col rounded-lg overflow-hidden shadow-bs"
-          >
-            <span class="relative">
-              <img
-                class="w-full h-[181px] md:w-[500px] md:h-[227px] object-cover mb-[18px]"
-                src="/assets/Image.png"
-                alt=""
-              />
-              <span
-                class="flex gap-[1px] bg-[#1C1E26] absolute top-3 left-3 pt-1.5 pb-1 px-2 rounded-full"
-              >
-                <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
-                <img src="/assets/Stars.svg" alt="" />
-              </span>
-            </span>
-            <h3 class="text-[#FFFFFF] text-[17.5px] md:text-[22px] font-[500] px-4 mb-[6px]">
-              عنوان تیم (تیم فرانت)
-            </h3>
-            <p
-              class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-4"
-            >
-              زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان یک
-              متن نهایتن دو خطی که پروژه رو توصیف کنه
+          <div class="bg-dark800 w-[302px] h-[134px] rounded-[4px]">
+            <p class="text-[14px] font-medium pt-[8px] mx-[8px] w-[286px] h-[108px]">
+              از وقتی به کمیته برنامه‌نویسان پیوستم، یادگیری و پیشرفت برام
+              لذت‌بخش‌تر شده. اینجا یه جمع صمیمی و حرفه‌ایه که همیشه برای
+              حمایت و همکاری آماده‌ست!
             </p>
-            <div class="flex flex-row gap-[16.5px] md:gap-[21px] mb-2 mt-8 md:mt-[48px]">
-              <button
-                class=" w-[160px] md:w-[200px] md:h-[40px] text-[14.5px] md:text-[18px] border-1 border-[#6E6EFF] py-2  rounded-lg mr-[13px] md:mr-4 hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
-                type="button"
-              >
-                برو به صفحه‌ی تیم
-              </button>
-              <div class="flex flex-row">
-                <div class="flex flex-col gap-2">
-                  <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Icon-3.svg" alt="" />
-                  <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">5 عضو</span>
-                </div>
-                <div class="flex flex-col gap-2 mx-[42px]">
-                  <img
-                    class="w-[13px] h-[13px] md:w-4 md:h-4"
-                    src="/assets/svg/Collection Icon.svg"
-                    alt=""
-                  />
-                  <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]"
-                    >3 پروژه</span
-                  >
-                </div>
-                <div class="flex flex-col gap-2">
-                  <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Memory Icon.svg" alt="" />
-                  <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]"
-                    >4 تکنولوژی</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#1C1E26] md:w-[500px] md:h-[428px] flex flex-col rounded-lg overflow-hidden shadow-bs"
-          >
-            <span class="relative">
-              <img
-                class="w-full h-[181px] md:w-[500px] md:h-[227px] object-cover mb-[18px]"
-                src="/assets/Image.png"
-                alt=""
-              />
-              <span
-                class="flex gap-[1px] bg-[#1C1E26] absolute top-3 left-3 pt-1.5 pb-1 px-2 rounded-full"
-              >
-                <span class="text-[11px] text-[#F1F1FF] font-[900]">12</span>
-                <img src="/assets/Stars.svg" alt="" />
-              </span>
-            </span>
-            <h3 class="text-[#FFFFFF] text-[17.5px] md:text-[22px] font-[500] px-4 mb-[6px]">
-              عنوان تیم (تیم فرانت)
-            </h3>
-            <p
-              class="text-[#E2E2DC] text-[13px] md:text-[16px] font-[100] leading-[24px] px-4"
-            >
-              زیر عنوان یک متن نهایتن دو خطی که پروژه رو توصیف کنه زیر عنوان یک
-              متن نهایتن دو خطی که پروژه رو توصیف کنه
-            </p>
-            <div class="flex flex-row gap-[16.5px] md:gap-[21px] mb-2 mt-8 md:mt-[48px]">
-              <button
-                class=" w-[160px] md:w-[200px] md:h-[40px] text-[14.5px] md:text-[18px] border-1 border-[#6E6EFF] py-2  rounded-lg mr-[13px] md:mr-4 hover:bg-purple-600/5 transition duration-300 ease-in-out cursor-pointer"
-                type="button"
-              >
-                برو به صفحه‌ی تیم
-              </button>
-              <div class="flex flex-row">
-                <div class="flex flex-col gap-2">
-                  <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Icon-3.svg" alt="" />
-                  <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]">5 عضو</span>
-                </div>
-                <div class="flex flex-col gap-2 mx-[42px]">
-                  <img
-                    class="w-[13px] h-[13px] md:w-4 md:h-4"
-                    src="/assets/svg/Collection Icon.svg"
-                    alt=""
-                  />
-                  <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]"
-                    >3 پروژه</span
-                  >
-                </div>
-                <div class="flex flex-col gap-2">
-                  <img class="w-[13px] h-[13px] md:w-4 md:h-4" src="/assets/svg/Memory Icon.svg" alt="" />
-                  <span class="text-[#9C9DA3] text-[11.5px] md:text-[14px] font-[300]"
-                    >4 تکنولوژی</span
-                  >
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
-      <!----------بخش کامنت ها---------->
-      <section class="flex justify-center mt-[128px]">
-        <div
-          class="bg-dark600 w-[334px] h-[227px] flex flex-col gap-2.5 items-center rounded-[8px]"
-        >
-          <div class="flex justify-between mr-[16px] pt-[8px]">
-            <img
-              class="w-[48px] h-[48px]"
-              src="/assets/Member Avatar.png"
-              alt=""
-            />
-            <div class="flex flex-col gap-[4px] mr-[10px]">
-              <h3 class="text-[14px] font-medium">جان دو</h3>
-              <p class="text-[14px] text-[#9C9DA3] font-normal">
-                توسعه دهنده کمیته
-              </p>
-            </div>
-            <img
-              class="w-[48px] h-[48px] mr-[86px]"
-              src="/assets/Icon,,.svg"
-              alt=""
-            />
-          </div>
-          <div class="relative">
-            <div
-              class="w-0 h-0 border-l-[10px] border-l-transparent border-b-[8px] border-b-dark800 border-r-[10px] border-r-transparent absolute -top-[6px] right-[20px]"
-            ></div>
-            <div class="bg-dark800 w-[302px] h-[134px] rounded-[4px]">
-              <p
-                class="text-[14px] font-medium pt-[8px] mx-[8px] w-[286px] h-[108px]"
-              >
-                از وقتی به کمیته برنامه‌نویسان پیوستم، یادگیری و پیشرفت برام
-                لذت‌بخش‌تر شده. اینجا یه جمع صمیمی و حرفه‌ایه که همیشه برای
-                حمایت و همکاری آماده‌ست!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--------------------->
-    </main>
-  </body>
+      </div>
+    </section>
+    <!--------------------->
+  </main>
+</body>
 
-  <script type="module">
-    import { getLoginPath } from '/scripts/common.js';
-    const signinSignupBtn = document.getElementById('signin-signup-btn');
+<script type="module">
+  import { getLoginPath } from '/scripts/common.js';
+  const signinSignupBtn = document.getElementById('signin-signup-btn');
 
-    function navigateToLogin(ev) {
-      window.location.href = getLoginPath();
-    }
+  function navigateToLogin(ev) {
+    window.location.href = getLoginPath();
+  }
 
-    signinSignupBtn.addEventListener('click', navigateToLogin);
-  </script>
+  signinSignupBtn.addEventListener('click', navigateToLogin);
+</script>
+
 </html>

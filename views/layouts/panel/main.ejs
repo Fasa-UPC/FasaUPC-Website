@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fasaUPC | Panel</title>
+    <%- meta %>
+        <link rel="stylesheet" href="/styles/styles.css">
+        <%- style %>
+</head>
+
+<body dir="rtl" class="bg-background">
+    <div class="md:flex">
+        <%- include('../../partials/panel/sidebar.ejs') %>
+            <div class="flex flex-col w-full overflow-x-auto">
+                <%- include('../../partials/panel/topbar.ejs') %>
+                    <main class="w-[90%] mx-auto md:p-6 md:w-full shrink-0 grow">
+                        <%- body %>
+                    </main>
+            </div>
+    </div>
+</body>
+<%- script %>
+    <script src="/scripts/sidebar.js"></script>
+
+</html>

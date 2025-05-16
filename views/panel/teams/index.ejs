@@ -1,0 +1,58 @@
+<!-- Datagrid btns -->
+<div class="flex justify-end mb-2">
+    <button class="btn primary" id="new-team-btn">
+        جدید
+    </button>
+</div>
+<!-- Datagrid -->
+<div class="overflow-x-auto">
+    <table class="datagrid">
+        <thead>
+            <tr>
+                <!-- No. -->
+                <th class="grow-0 max-w-[50px] w-[50px]"></th>
+
+                <!-- Title -->
+                <th class="grow shrink min-w-[200px] w-[200px]">عنوان</th>
+
+                <!-- Projects -->
+                <th class="grow shrink min-w-[100px] w-[100px]">تعداد پروژه ها</th>
+
+                <!-- Colaborators-Count -->
+                <th class="grow shrink-0 max-w-[100px] w-[100px]">تعداد اعضا</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% teams.forEach((team, index)=> { %>
+                <tr>
+                    <!-- No. -->
+                    <td class="grow-0 max-w-[50px] w-[50px]">
+                        <%= offset + index + 1 %>
+                    </td>
+
+                    <!-- Title -->
+                    <td class="grow shrink min-w-[200px] w-[200px]">
+                        <%= team.title %>
+                    </td>
+
+                    <!-- Projects -->
+                    <td class="grow shrink-0 min-w-[100px] w-[100px]">2</td>
+
+                    <!-- Colaborators-Count -->
+                    <td class="grow shrink-0 max-w-[100px] w-[100px]">12</td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const addNewTeamBtn = document.getElementById('new-team-btn');
+
+    function navigateToNewTeamPage() {
+        window.location.assign("/panel/teams/new");
+    }
+
+    addNewTeamBtn.addEventListener("click", navigateToNewTeamPage);
+</script>

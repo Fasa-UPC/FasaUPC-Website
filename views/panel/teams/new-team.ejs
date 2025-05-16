@@ -1,0 +1,88 @@
+<form id="create-team-form" class="text-white grid grid-cols-2 gap-2">
+    <div class="input-wrapper col-span-full">
+        <label class="label">
+            عنوان تیم:
+        </label>
+        <input class="input" id="title" />
+    </div>
+
+    <!-- <div class="input-wrapper">
+        <label class="label">
+            نوع نیم:
+        </label>
+        <select class="input" id="type">
+            <option>fwf</option>
+        </select>
+    </div> -->
+
+    <div class="input-wrapper col-span-full">
+        <label class="label">
+            توضیحات تیم:
+        </label>
+        <textarea class="input" id="description"></textarea>
+    </div>
+
+
+    <button type="submit" class="btn primary col-span-full md:justify-self-end mt-8">ثبت</button>
+</form>
+
+<div id="new-team-confirm" class="modal">
+    <div class="content px-2 py-4 rounded-xl w-[80%]">
+        <div class="text-dark-50">
+            آیا از ایجاد این تیم مطمئن هستید؟
+        </div>
+        <div class="flex">
+            <button class="btn primary w-full" id="confirm-btn">بله</button>
+            <button class="btn w-full">انصراف</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+<script>
+    const formElem = document.getElementById("create-team-form");
+    const titleInp = document.getElementById("title");
+    const descInp = document.getElementById("description");
+    const typeOpt = document.getElementById("type");
+    const newTeamConfirmModal = document.getElementById("new-team-confirm");
+    const confirmBtn = document.getElementById("confirm-btn");
+
+    function openNewTeamConfirmModal() {
+        newTeamConfirmModal.classList.add("show");
+    }
+
+    function closeNewTeamConfirmModal() {
+        newTeamConfirmModal.classList.remove("show");
+    }
+
+    confirmBtn.addEventListener("click", submitTeamForm);
+
+    function submitTeamForm() {
+        const title = titleInp.value;
+        const description = descInp.value;
+        // const type = typeOpt.value;
+
+        const team = {
+            title,
+            description,
+            // type
+        };
+
+        fetch("/panel/teams", {
+            body: JSON.stringify(team),
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => window.location.assign("/panel/teams"));
+    }
+
+    formElem.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+
+        openNewTeamConfirmModal();
+    });
+</script>
+<script src="/scripts/modal.js"></script>

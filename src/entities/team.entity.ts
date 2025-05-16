@@ -1,4 +1,4 @@
-import { TeamTypeEnum } from '../enums/teamType-enum';
+// import { TeamTypeEnum } from '../enums/teamType-enum';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'team' })
@@ -11,7 +11,4 @@ export class Team {
 
   @Column({ name: 'description', type: 'text' })
   description: string;
-
-  @Column({ type: 'enum', enum: TeamTypeEnum , name: 'type' })
-  type: TeamTypeEnum;
 }

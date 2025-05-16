@@ -12,6 +12,10 @@ export class PanelUsersController {
     @Query('count') count: number,
   ) {
     const users = await this.panelUsersService.getUsersTable({ count, page });
-    return { users };
+    return {
+      users,
+      headerTitle: 'مدیریت کاربران',
+      layout: 'layouts/panel/main',
+    };
   }
 }

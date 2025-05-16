@@ -8,7 +8,6 @@ import { dataSourceOptions } from './config/typeorm.config';
 import { TeamsService } from './modules/teams/teams.service';
 import { HomeModule } from './modules/home/home.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { APP_INTERCEPTOR } from '@nestjs/core';
 import { OptionalUserAuthInterceptor } from './interceptors/auth.interceptor';
 import { JwtModule } from '@nestjs/jwt';
 import { PanelModule } from './modules/panel/panel.module';

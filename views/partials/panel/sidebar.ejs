@@ -1,16 +1,20 @@
-<div
-  id="sidebar"
-  class="fixed z-40 peer hide [.hide]:-right-full right-0 transition-all top-0 bg-dark100 w-[300px] h-screen"
->
-  <div
-    id="sidebar-header"
-    class="my-[24px] mx-[16px] flex justify-between items-center"
-  >
-    <div>logo placeholder</div>
-    <button id="sidebar-close-btn">close</button>
+<div id="sidebar"
+  class="fixed z-20 peer hide [.hide]:-right-full right-0 transition-all top-0 bg-dark600 w-[300px] h-screen md:sticky md:right-0 md:[.hide]:right-0 py-6 px-5 shrink-0">
+  <div id="sidebar-header" class="flex justify-between items-center">
+    <div>
+      <!-- <img class="h-[100px]" src="/assets/logo.svg" alt="fasaupc logo" /> -->
+    </div>
+    <button id="sidebar-close-btn" class="md:hidden">close</button>
+  </div>
+
+  <div id="sidebar-body">
+    <div class="flex flex-col gap-y-1 items-start ">
+      <a class="sidebar-item" href="/panel/teams">مدیریت تیم ها</a>
+      <a class="sidebar-item" href="/panel/users">مدیریت کاربران</a>
+      <a class="sidebar-item" href="/panel/projects">مدیریت پروژه ها</a>
+    </div>
   </div>
 </div>
-<div
-  id="sidebar-overlay"
-  class="fixed z-30 top-0 right-0 pointer-events-none bg-dark800 opacity-0 transition-opacity peer-[.show]:opacity-100 w-screen h-screen"
-></div>
+<div id="sidebar-overlay"
+  class="fixed z-10 top-0 right-0 pointer-events-none bg-dark800/50 opacity-0 transition-opacity peer-[.show]:opacity-100 w-screen h-screen md:hidden">
+</div>
