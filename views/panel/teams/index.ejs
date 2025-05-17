@@ -20,6 +20,9 @@
 
                 <!-- Colaborators-Count -->
                 <th class="grow shrink-0 max-w-[100px] w-[100px]">تعداد اعضا</th>
+
+                <!-- Actions -->
+                <th class="grow-0 shrink-0 max-w-[50px] w-[50px]"></th>
             </tr>
         </thead>
 
@@ -41,6 +44,15 @@
 
                     <!-- Colaborators-Count -->
                     <td class="grow shrink-0 max-w-[100px] w-[100px]">12</td>
+
+                    <!-- Actions -->
+                    <td class="grow-0 shrink-0 max-w-[50px] w-[50px]">
+                        <button class="actions-btn" data-id="<%= team.id %>">...</button>
+                        <div class="dropdown" data-id="<%= team.id %>">
+                            <button class="dropdown-item edit">جزییات و ویرایش</button>
+                            <button class="dropdown-item delete">حذف</button>
+                        </div>
+                    </td>
                 </tr>
                 <% }) %>
         </tbody>
@@ -55,4 +67,50 @@
     }
 
     addNewTeamBtn.addEventListener("click", navigateToNewTeamPage);
+</script>
+
+<script src="/scripts/vendors/popper.min.js"></script>
+<script src="/scripts/vendors/tippy-bundle.umd.min.js"></script>
+
+<script>
+    const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
+
+    dropdowns.forEach(d => {
+        const editBtn = d.querySelector('.edit');
+        const deleteBtn = d.querySelector('.delete');
+        const id = d.dataset.id;
+
+        editBtn.addEventListener("click", () => {
+            console.log("edit: ", id);
+        });
+
+        deleteBtn.addEventListener("click", () => {
+            console.log("delete: ", id);
+        });
+    });
+</script>
+
+<script>
+    const actionsBtns = Array.from(document.getElementsByClassName('actions-btn'));
+
+    actionsBtns.forEach(ab => {
+        const id = ab.dataset.id;
+        const dropdown = document.querySelector(`.dropdown[data-id="${id}"]`);
+
+        tippy(ab, {
+            content: dropdown,
+            trigger: 'click',
+            placement: 'bottom',
+            arrow: false,
+            interactive: true,
+            onShown(instance) {
+                const dropdownItems = Array.from(instance.popper.querySelectorAll('.dropdown-item'));
+                dropdownItems.forEach(di => {
+                    di.addEventListener("click", () => {
+                        instance.hide();
+                    })
+                })
+            }
+        });
+    })
 </script>

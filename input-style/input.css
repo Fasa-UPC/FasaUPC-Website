@@ -125,6 +125,15 @@
     @apply w-full px-0.5 py-4 text-start text-dark-50;
   }
   /* #endregion */
+
+  /* #region Dropdown */
+  .dropdown {
+    @apply bg-dark600 p-2 flex flex-col gap-y-0.5 rounded-lg w-max absolute top-0 left-0 transition-opacity;
+    & .dropdown-item {
+      @apply text-dark-50 text-start px-4 py-2 hover:bg-dark800;
+    }
+  }
+  /* #endregion */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
