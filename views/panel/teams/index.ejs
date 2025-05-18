@@ -6,7 +6,7 @@
 </div>
 <!-- Datagrid -->
 <div class="overflow-x-auto">
-    <table class="datagrid">
+    <table class="datagrid" id="teams-table">
         <thead>
             <tr>
                 <!-- No. -->
@@ -101,6 +101,7 @@
             content: dropdown,
             trigger: 'click',
             placement: 'bottom',
+            appendTo: 'parent',
             arrow: false,
             interactive: true,
             onShown(instance) {
