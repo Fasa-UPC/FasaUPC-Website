@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateTeamDTO } from 'src/dtos/create-team.dto';
+import { ProjectTeam } from 'src/entities/projectTeam.entity';
 import { Team } from 'src/entities/team.entity';
+import { UserTeam } from 'src/entities/userTeam.entity';
 import { Pagination } from 'src/types/public.type';
 import { Repository } from 'typeorm';
 
@@ -9,10 +11,14 @@ import { Repository } from 'typeorm';
 export class TeamsService {
   constructor(
     @InjectRepository(Team) private readonly teamRepository: Repository<Team>,
+    @InjectRepository(UserTeam)
+    private readonly userTeamRepository: Repository<UserTeam>,
+    @InjectRepository(ProjectTeam)
+    private readonly projectTeamRepository: Repository<ProjectTeam>,
   ) {}
 
   async getTeamsTable(pagination?: Pagination) {
-    const teams = await this.teamRepository.find({
+    let teams = await this.teamRepository.find({
       skip:
         pagination?.count &&
         pagination?.page &&
@@ -20,9 +26,45 @@ export class TeamsService {
       take: pagination?.count,
     });
 
+    const userTeamCounts = await Promise.all(
+      teams.map((team) => this._getUserTeamCount(team.id)),
+    );
+
+    const projectTeamCounts = await Promise.all(
+      teams.map((team) => this._getTeamProjectCount(team.id)),
+    );
+
+    teams = teams.map((team, index) => ({
+      ...team,
+      usersCount: userTeamCounts[index].count,
+      projectsCount: projectTeamCounts[index].count,
+    }));
+
     console.log(teams);
 
     return teams;
+  }
+
+  async _getUserTeamCount(id: string) {
+    const userTeamCount = await this.userTeamRepository.countBy({
+      teamID: id,
+    });
+
+    return {
+      teamID: id,
+      count: userTeamCount,
+    };
+  }
+
+  async _getTeamProjectCount(id: string) {
+    const teamProjectCount = await this.projectTeamRepository.countBy({
+      teamID: id,
+    });
+
+    return {
+      teamID: id,
+      count: teamProjectCount,
+    };
   }
 
   async createTeam(createTeamDTO: CreateTeamDTO) {

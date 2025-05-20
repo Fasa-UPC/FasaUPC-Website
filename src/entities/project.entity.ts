@@ -1,12 +1,14 @@
 import { ProjectStatus } from '../enums/projectStatus-enum';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { ProjectTeam } from './projectTeam.entity';
+import { Team } from './team.entity';
 
 @Entity({ name: 'project' })
 export class Project {
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
-    id: string;
+  id: string;
 
-  @Column({ name: 'title', length: 20})
+  @Column({ name: 'title', length: 20 })
   title: string;
 
   @Column({ type: 'enum', enum: ProjectStatus, name: 'status' })
@@ -21,7 +23,7 @@ export class Project {
   @Column({ name: 'type' })
   type: string;
 
-  @Column({ name: 'banner', type: 'text' })  
+  @Column({ name: 'banner', type: 'text' })
   banner: string;
 
   @Column({ name: 'begin_date', type: 'date' })
@@ -33,7 +35,9 @@ export class Project {
   @Column({ name: 'online_link', type: 'text' })
   onlineLink: string;
 
-  @Column({ name: 'github_link', type: 'text' }) 
+  @Column({ name: 'github_link', type: 'text' })
   githubLink: string;
 
+  @OneToMany(() => ProjectTeam, (projectTeam) => projectTeam.project)
+  teams: Team[];
 }

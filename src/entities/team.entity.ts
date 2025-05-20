@@ -1,5 +1,10 @@
 // import { TeamTypeEnum } from '../enums/teamType-enum';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { ProjectTeam } from './projectTeam.entity';
+import { Project } from './project.entity';
+import { UserTeam } from './userTeam.entity';
+import { User } from './user.entity';
+import { Expose } from 'class-transformer';
 
 @Entity({ name: 'team' })
 export class Team {
@@ -11,4 +16,16 @@ export class Team {
 
   @Column({ name: 'description', type: 'text' })
   description: string;
+
+  @OneToMany(() => ProjectTeam, (projectTeam) => projectTeam.team)
+  projects: Project[];
+
+  @OneToMany(() => UserTeam, (userTeam) => userTeam.team)
+  users: User[];
+
+  @Expose()
+  usersCount: number;
+
+  @Expose()
+  projectsCount: number;
 }

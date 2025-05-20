@@ -19,7 +19,7 @@
                 <th class="grow shrink min-w-[100px] w-[100px]">تعداد پروژه ها</th>
 
                 <!-- Colaborators-Count -->
-                <th class="grow shrink-0 max-w-[100px] w-[100px]">تعداد اعضا</th>
+                <th class="grow shrink-0 min-w-[100px] w-[100px]">تعداد اعضا</th>
 
                 <!-- Actions -->
                 <th class="grow-0 shrink-0 max-w-[50px] w-[50px]"></th>
@@ -40,10 +40,14 @@
                     </td>
 
                     <!-- Projects -->
-                    <td class="grow shrink-0 min-w-[100px] w-[100px]">2</td>
+                    <td class="grow shrink-0 min-w-[100px] w-[100px]">
+                        <%= team.projectsCount %>
+                    </td>
 
                     <!-- Colaborators-Count -->
-                    <td class="grow shrink-0 max-w-[100px] w-[100px]">12</td>
+                    <td class="grow shrink-0 min-w-[100px] w-[100px]">
+                        <%= team.usersCount %>
+                    </td>
 
                     <!-- Actions -->
                     <td class="grow-0 shrink-0 max-w-[50px] w-[50px]">
