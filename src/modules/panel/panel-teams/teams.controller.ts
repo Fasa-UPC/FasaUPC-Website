@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Post, Query, Render } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Post,
+  Query,
+  Render,
+} from '@nestjs/common';
 import { TeamsService } from './teams.service';
 import { CreateTeamDTO } from 'src/dtos/create-team.dto';
 
@@ -25,6 +34,21 @@ export class TeamsController {
   @Render('panel/teams/new-team')
   getNewTeamPage() {
     return { layout: 'layouts/panel/main', headerTitle: 'تیم جدید' };
+  }
+
+  @Get(':id/edit')
+  @Render('panel/teams/edit-team')
+  async getEditTeamPage(@Param('id') id: string) {
+    const team = await this.teamsService.getTeamByID(id);
+    if (!team) {
+      throw new NotFoundException();
+    }
+    console.log(team);
+    return {
+      team,
+      layout: 'layouts/panel/main',
+      headerTitle: `ویرایش تیم ${team?.title}`,
+    };
   }
 
   @Post('')

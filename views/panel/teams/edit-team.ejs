@@ -1,0 +1,48 @@
+<form id="edit-team-form" class="grid gap-2 grid-cols-1 lg:grid-cols-2">
+    <div class="input-wrapper">
+        <label class="label">
+            عنوان
+        </label>
+        <input class="input" value="<%= team.title %>" />
+    </div>
+
+    <div class="input-wrapper row-start-2 col-span-full">
+        <label class="label">
+            توضیحات
+        </label>
+        <textarea class="input" rows="3"><%= team.description %></textarea>
+    </div>
+
+    <button type="submit" class="btn primary col-span-full md:justify-self-end mt-8">ثبت</button>
+</form>
+
+<div id="edit-team-confirm" class="modal">
+    <div class="content px-2 py-4 rounded-xl w-[80%] md:w-[400px]">
+        <div class="text-dark-50">
+            آیا از ویرایش اطلاعات این تیم مطمئن هستید؟
+        </div>
+        <div class="flex gap-2 mt-6">
+            <button class="btn primary w-full" id="confirm-btn">بله</button>
+            <button class="btn outlined w-full close-btn" data-for="edit-team-confirm">انصراف</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+<script src="/scripts/modal.js"></script>
+<script>
+    const editTeamForm = document.getElementById('edit-team-form');
+    const editTeamConfirmModal = document.getElementById('edit-team-confirm');
+
+    function openEditTeamConfirmModal() {
+        editTeamConfirmModal.classList.add("show");
+    }
+
+    function submitEditTeamForm(ev) {
+        ev.preventDefault();
+
+        openEditTeamConfirmModal();
+    }
+
+    editTeamForm.addEventListener('submit', submitEditTeamForm);
+</script>

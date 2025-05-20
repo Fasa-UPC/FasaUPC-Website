@@ -84,10 +84,12 @@
         const deleteBtn = d.querySelector('.delete');
         const id = d.dataset.id;
 
+        // Handler for edit 
         editBtn.addEventListener("click", () => {
-            console.log("edit: ", id);
+            window.location.assign(`/panel/teams/${id}/edit`);
         });
 
+        // Handler for delete
         deleteBtn.addEventListener("click", () => {
             console.log("delete: ", id);
         });

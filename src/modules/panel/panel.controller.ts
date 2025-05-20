@@ -8,7 +8,6 @@ export class PanelController {
   @Get()
   @Render('panel/')
   getIndexView() {
-    return {};
+    return { layout: 'layouts/panel/main', headerTitle: 'داشبورد' };
   }
-
 }

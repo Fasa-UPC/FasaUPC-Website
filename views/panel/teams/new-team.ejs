@@ -27,13 +27,13 @@
 </form>
 
 <div id="new-team-confirm" class="modal">
-    <div class="content px-2 py-4 rounded-xl w-[80%]">
+    <div class="content px-2 py-4 rounded-xl w-[80%] md:w-[400px]">
         <div class="text-dark-50">
             آیا از ایجاد این تیم مطمئن هستید؟
         </div>
-        <div class="flex">
+        <div class="flex gap-2 mt-6">
             <button class="btn primary w-full" id="confirm-btn">بله</button>
-            <button class="btn w-full">انصراف</button>
+            <button class="btn outlined w-full close-btn" data-for="new-team-confirm">انصراف</button>
         </div>
     </div>
     <div class="overlay"></div>
@@ -49,10 +49,6 @@
 
     function openNewTeamConfirmModal() {
         newTeamConfirmModal.classList.add("show");
-    }
-
-    function closeNewTeamConfirmModal() {
-        newTeamConfirmModal.classList.remove("show");
     }
 
     confirmBtn.addEventListener("click", submitTeamForm);

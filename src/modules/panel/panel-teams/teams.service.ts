@@ -40,9 +40,21 @@ export class TeamsService {
       projectsCount: projectTeamCounts[index].count,
     }));
 
-    console.log(teams);
-
     return teams;
+  }
+
+  async getTeamByID(id: string) {
+    const team = await this.teamRepository.findOne({
+      where: {
+        id,
+      },
+      relations: {
+        users: true,
+        projects: true,
+      },
+    });
+
+    return team;
   }
 
   async _getUserTeamCount(id: string) {

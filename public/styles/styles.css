@@ -318,6 +318,9 @@
   .col-span-full {
     grid-column: 1 / -1;
   }
+  .row-start-2 {
+    grid-row-start: 2;
+  }
   .m-3 {
     margin: calc(var(--spacing) * 3);
   }
@@ -708,9 +711,6 @@
   .max-w-\[50px\] {
     max-width: 50px;
   }
-  .max-w-\[100px\] {
-    max-width: 100px;
-  }
   .min-w-\[100px\] {
     min-width: 100px;
   }
@@ -745,6 +745,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1594,6 +1597,11 @@
       width: 331px;
     }
   }
+  .md\:w-\[400px\] {
+    @media (width >= 48rem) {
+      width: 400px;
+    }
+  }
   .md\:w-\[445px\] {
     @media (width >= 48rem) {
       width: 445px;
@@ -1818,6 +1826,11 @@
       color: #E2E2DC;
     }
   }
+  .lg\:grid-cols-2 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .\[\.hide\]\:pointer-events-none {
     &:is(.hide) {
       pointer-events: none;
@@ -1872,6 +1885,19 @@
       --bg-color: var(--color-purple-500);
       --fg-color: var(--color-white);
       --hover-color: var(--color-purple-600);
+    }
+    &.outlined {
+      border-style: var(--tw-border-style);
+      border-width: 2px;
+      border-color: var(--color-dark-50);
+      background-color: transparent;
+      color: var(--color-dark-50);
+      transition-property: all;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+      &:hover {
+        border-color: var(--color-dark-100);
+      }
     }
     &:hover {
       background-color: var(--hover-color);
@@ -1944,10 +1970,23 @@
     & > .content {
       position: relative;
       z-index: 40;
+      --tw-translate-y: calc(var(--spacing) * -6);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
       background-color: var(--color-dark600);
+      opacity: 0%;
+      transition-property: all;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+      --tw-duration: 300ms;
+      transition-duration: 300ms;
     }
     &.show {
       pointer-events: auto;
+      opacity: 100%;
+    }
+    &.show > .content {
+      --tw-translate-y: calc(var(--spacing) * 0);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
       opacity: 100%;
     }
   }
