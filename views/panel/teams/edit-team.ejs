@@ -13,9 +13,103 @@
         <textarea class="input" rows="3"><%= team.description %></textarea>
     </div>
 
-    <button type="submit" class="btn primary col-span-full md:justify-self-end mt-8">ثبت</button>
+    <button type="submit" class="btn primary col-span-full md:justify-self-end mt-8">ویرایش</button>
 </form>
 
+<!-- #region Members section -->
+<div class="mt-16">
+    <div class="overflow-x-auto">
+        <% if (team.users.length> 0) { %>
+            <table class="datagrid" id="teams-table">
+                <thead>
+                    <tr>
+                        <!-- No. -->
+                        <th class="grow-0 max-w-[50px] w-[50px]"></th>
+
+                        <!-- Name -->
+                        <th class="grow shrink-0 min-w-[150px] w-[150px]">نام</th>
+
+                        <!-- Surname -->
+                        <th class="grow shrink-0 min-w-[150px] w-[150px]">نام خانوادگی</th>
+
+                        <!-- Title -->
+                        <th class="grow shrink-0 min-w-[200px] w-[200px]">عنوان</th>
+
+                        <!-- Actions -->
+                        <th class="grow-0 shrink-0 max-w-[50px] w-[50px]"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% team.users.forEach((user, index)=> { %>
+                        <tr>
+                            <!-- No. -->
+                            <td class="grow-0 max-w-[50px] w-[50px]">
+                                <%= offset + index + 1 %>
+                            </td>
+
+                            <!-- Name -->
+                            <td class="grow shrink-0 min-w-[150px] w-[150px]">
+                                <%= user.profile.firstName %>
+                            </td>
+
+                            <!-- Surname -->
+                            <td class="grow shrink-0 min-w-[150px] w-[150px]">
+                                <%= user.profile.lastName %>
+                            </td>
+
+                            <!-- Title -->
+                            <td class="grow shrink-0 min-w-[200px] w-[200px]">
+                                <%= user.profile.title %>
+                            </td>
+
+                            <!-- Actions -->
+                            <td class="grow-0 shrink-0 max-w-[50px] w-[50px]">
+                                <button class="actions-btn" data-id="<%= user.id %>">...</button>
+                                <div class="dropdown" data-id="<%= user.id %>">
+                                    <button class="dropdown-item edit">جزییات و ویرایش</button>
+                                    <button class="dropdown-item delete">حذف</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <div
+                    class="h-[200px] w-full rounded-2xl border-2 border-dark-100/25 flex flex-col gap-4 justify-center items-center">
+                    <p class="text-dark-100">عضوی برای تیم انتخاب نکرده اید!</p>
+                    <button class="btn outlined add-member-btn">افزودن عضو</button>
+                </div>
+                <% } %>
+    </div>
+</div>
+<!-- #endregion -->
+
+<!-- #region Add memeber modal -->
+<div id="add-member-modal" class="modal">
+    <div class="content px-2 py-4 rounded-xl w-screen h-screen flex flex-col md:w-[400px]">
+        <div class="text-lg font-bold text-dark-50 mb-4">
+            افزودن عضو
+        </div>
+        <div class="flex w-full gap-2">
+            <input class="input grow" id="user-search-input" placeholder="جستوجوی کاربر" />
+            <button class="btn outlined border" id="user-search-btn">جستوجو</button>
+        </div>
+        <!-- #region Users list -->
+        <div class="h-fit overflow-y-auto grow" id="users-list-modal">
+        </div>
+        <!-- #region -->
+        <div class="flex gap-2 w-full bg-dark600">
+            <button class="btn primary w-full">بله</button>
+            <button class="btn outlined w-full close-btn" data-for="add-member-modal">انصراف</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+<!-- #endregion -->
+
+<!-- #region Edit team modal -->
 <div id="edit-team-confirm" class="modal">
     <div class="content px-2 py-4 rounded-xl w-[80%] md:w-[400px]">
         <div class="text-dark-50">
@@ -28,6 +122,7 @@
     </div>
     <div class="overlay"></div>
 </div>
+<!-- #endregion -->
 
 <script src="/scripts/modal.js"></script>
 <script>
@@ -45,4 +140,67 @@
     }
 
     editTeamForm.addEventListener('submit', submitEditTeamForm);
+</script>
+
+<script>
+    const addMemberBtns = Array.from(document.querySelectorAll(".add-member-btn"));
+    const addMemberModal = document.getElementById("add-member-modal");
+    const userSearchInput = document.getElementById("user-search-input");
+    const userSearchBtn = document.getElementById("user-search-btn");
+    const usersListModal = document.getElementById("users-list-modal");
+
+    // #region Modal open
+    function openAddMemberModal(ev) {
+        ev.stopPropagation();
+        addMemberModal.classList.add("show");
+    }
+
+    addMemberBtns.forEach(btn => {
+        btn.addEventListener("click", openAddMemberModal);
+    });
+    // #endregion
+
+    // #region User search
+    async function searchUser(search) {
+        const userCountRes = await fetch(`http://localhost:4000/panel/users/search/count?search=${search}`, {
+            method: "GET",
+        });
+
+        const { count: usersCount } = await userCountRes.json();
+
+        if (usersCount > 0) {
+            const usersRes = await fetch(`http://localhost:4000/panel/users/search?search=${search}`, {
+                method: "GET"
+            });
+
+            const users = await usersRes.json();
+
+            return { users, usersCount }
+        }
+        return { users: [], usersCount }
+    }
+
+    async function userSearchBtnHandler() {
+        const searchStr = userSearchInput.value;
+
+        const { users, usersCount } = await searchUser(searchStr);
+
+        renderUsersListModal(users);
+    }
+
+    function renderUsersListModal(users) {
+        console.log(users);
+
+        usersListModal.replaceChildren();
+        users.forEach(user => {
+            const userCard = document.createElement("div");
+            userCard.className = "bg-red-900";
+            userCard.innerText = user.profile.firstName;
+
+            usersListModal.appendChild(userCard);
+        })
+    }
+
+    userSearchBtn.addEventListener("click", userSearchBtnHandler);
+    // #endregion
 </script>

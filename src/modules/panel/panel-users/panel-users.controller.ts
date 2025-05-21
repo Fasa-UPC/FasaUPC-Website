@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Render } from '@nestjs/common';
+import { Controller, Get, Post, Query, Render } from '@nestjs/common';
 import { PanelUsersService } from './panel-users.service';
 
 @Controller('panel/users')
@@ -17,5 +17,26 @@ export class PanelUsersController {
       headerTitle: 'مدیریت کاربران',
       layout: 'layouts/panel/main',
     };
+  }
+
+  @Get('search')
+  async searchUsers(
+    @Query('page') page: number,
+    @Query('count') count: number,
+    @Query('search') search: string,
+  ) {
+    const users = await this.panelUsersService.searchUsers(search, {
+      page,
+      count,
+    });
+
+    return users;
+  }
+
+  @Get('search/count')
+  async searchUsersCount(@Query('search') search: string) {
+    const userCount = await this.panelUsersService.searchUsersCount(search);
+
+    return { count: userCount };
   }
 }

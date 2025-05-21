@@ -40,7 +40,7 @@
 @layer components {
   .input {
     border: 1px solid var(--color-dark100);
-    padding: 0.5rem 0.25rem;
+    @apply px-1.5 py-2;
     color: var(--color-white);
     border-radius: 0.25rem;
     min-height: 45px;

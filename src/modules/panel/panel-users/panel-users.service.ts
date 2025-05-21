@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/entities/user.entity';
 import { Pagination } from 'src/types/public.type';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 
 @Injectable()
 export class PanelUsersService {
@@ -20,6 +20,65 @@ export class PanelUsersService {
       relations: {
         profile: true,
       },
+    });
+
+    return users;
+  }
+
+  async searchUsersCount(search: string) {
+    const usersCount = await this.userRepository.count({
+      where: {
+        profile: [
+          {
+            firstName: Like(`%${search}%`),
+          },
+          {
+            lastName: Like(`%${search}%`),
+          },
+          {
+            title: Like(`%${search}%`),
+          },
+        ],
+      },
+    });
+
+    return usersCount;
+  }
+
+  async searchUsers(search: string, pagination?: Pagination) {
+    const users = await this.userRepository.find({
+      where: {
+        profile: [
+          {
+            firstName: Like(`%${search}%`),
+          },
+          {
+            lastName: Like(`%${search}%`),
+          },
+          {
+            title: Like(`%${search}%`),
+          },
+        ],
+      },
+      relations: {
+        profile: true,
+      },
+      select: {
+        id: true,
+        profile: {
+          id: true,
+          firstName: true,
+          lastName: true,
+          title: true,
+          image: true,
+        },
+        role: true,
+      },
+      skip:
+        pagination?.count &&
+        pagination?.page &&
+        pagination.page * pagination.count,
+      take: pagination?.count,
     });
 
     return users;

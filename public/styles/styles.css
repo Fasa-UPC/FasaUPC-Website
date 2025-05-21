@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-900: oklch(39.6% 0.141 25.723);
     --color-yellow-50: oklch(98.7% 0.026 102.212);
     --color-yellow-700: oklch(55.4% 0.135 66.442);
     --color-green-200: oklch(92.5% 0.084 155.995);
@@ -210,6 +212,9 @@
   .relative {
     position: relative;
   }
+  .sticky {
+    position: sticky;
+  }
   .inset-x-0 {
     inset-inline: calc(var(--spacing) * 0);
   }
@@ -284,6 +289,9 @@
   }
   .right-\[20px\] {
     right: 20px;
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
   }
   .-left-24 {
     left: calc(var(--spacing) * -24);
@@ -375,6 +383,9 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
   .mt-\[50px\] {
     margin-top: 50px;
   }
@@ -425,6 +436,9 @@
   }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
@@ -570,14 +584,23 @@
   .h-\[350px\] {
     height: 350px;
   }
+  .h-\[2000px\] {
+    height: 2000px;
+  }
   .h-fit {
     height: fit-content;
   }
   .h-full {
     height: 100%;
   }
+  .h-max {
+    height: max-content;
+  }
   .h-screen {
     height: 100vh;
+  }
+  .max-h-max {
+    max-height: max-content;
   }
   .w-0 {
     width: calc(var(--spacing) * 0);
@@ -596,6 +619,9 @@
   }
   .w-\[2px\] {
     width: 2px;
+  }
+  .w-\[9\%\] {
+    width: 9%;
   }
   .w-\[13px\] {
     width: 13px;
@@ -647,6 +673,9 @@
   }
   .w-\[140px\] {
     width: 140px;
+  }
+  .w-\[150px\] {
+    width: 150px;
   }
   .w-\[160px\] {
     width: 160px;
@@ -713,6 +742,9 @@
   }
   .min-w-\[100px\] {
     min-width: 100px;
+  }
+  .min-w-\[150px\] {
+    min-width: 150px;
   }
   .min-w-\[200px\] {
     min-width: 200px;
@@ -800,6 +832,9 @@
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
@@ -860,6 +895,9 @@
   .overflow-x-hidden {
     overflow-x: hidden;
   }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
@@ -880,6 +918,10 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-1 {
     border-style: var(--tw-border-style);
@@ -918,6 +960,12 @@
   }
   .border-\[\#53555E\] {
     border-color: #53555E;
+  }
+  .border-dark-100\/25 {
+    border-color: color-mix(in srgb, #bcbdc1 25%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-dark-100) 25%, transparent);
+    }
   }
   .border-purple-500 {
     border-color: var(--color-purple-500);
@@ -966,6 +1014,12 @@
   }
   .bg-purple-500 {
     background-color: var(--color-purple-500);
+  }
+  .bg-red-400 {
+    background-color: var(--color-red-400);
+  }
+  .bg-red-900 {
+    background-color: var(--color-red-900);
   }
   .bg-slate-700\/20 {
     background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 20%, transparent);
@@ -1041,6 +1095,9 @@
   }
   .pt-1\.5 {
     padding-top: calc(var(--spacing) * 1.5);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
   }
   .pt-\[8px\] {
     padding-top: 8px;
@@ -1197,6 +1254,9 @@
   }
   .text-dark-50 {
     color: var(--color-dark-50);
+  }
+  .text-dark-100 {
+    color: var(--color-dark-100);
   }
   .text-dark100 {
     color: var(--color-dark100);
@@ -1857,7 +1917,8 @@
 @layer components {
   .input {
     border: 1px solid var(--color-dark100);
-    padding: 0.5rem 0.25rem;
+    padding-inline: calc(var(--spacing) * 1.5);
+    padding-block: calc(var(--spacing) * 2);
     color: var(--color-white);
     border-radius: 0.25rem;
     min-height: 45px;
