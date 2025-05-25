@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   NotFoundException,
   Param,
@@ -64,6 +65,16 @@ export class TeamsController {
     @Body('userID') userID: string,
   ) {
     const result = await this.teamsService.addMember({ teamID, userID });
+
+    return result;
+  }
+
+  @Delete(':teamID/members')
+  async removeMember(
+    @Param('teamID') teamID: string,
+    @Body('userID') userID: string,
+  ) {
+    const result = await this.teamsService.removeMember({ teamID, userID });
 
     return result;
   }

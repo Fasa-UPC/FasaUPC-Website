@@ -64,7 +64,7 @@ export class PanelUsersService {
         ],
         teams: [
           {
-            id: teamID,
+            teamID,
           },
         ],
       },

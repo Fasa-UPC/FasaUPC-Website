@@ -57,7 +57,6 @@ export class TeamsService {
         projects: true,
       },
     });
-    console.log(team?.users[0].user.profile);
     return team;
   }
 
@@ -108,5 +107,14 @@ export class TeamsService {
     );
 
     return result;
+  }
+
+  async removeMember({ teamID, userID }: { teamID: string; userID: string }) {
+    const result = await this.userTeamRepository.delete({
+      userID,
+      teamID,
+    });
+
+    return !!result.affected;
   }
 }

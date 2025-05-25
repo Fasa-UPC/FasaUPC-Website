@@ -24,7 +24,7 @@ export class PanelUsersController {
     @Query('page') page: number,
     @Query('count') count: number,
     @Query('search') search: string,
-    @Query('team') teamID: string,
+    @Query('teamID') teamID: string,
   ) {
     const users = await this.panelUsersService.searchUsers(
       { search, teamID },

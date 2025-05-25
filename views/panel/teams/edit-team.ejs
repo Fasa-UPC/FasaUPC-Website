@@ -18,71 +18,76 @@
 
 <!-- #region Members section -->
 <div class="mt-16">
-    <div class="overflow-x-auto">
-        <% if (team.users.length> 0) { %>
-            <table class="datagrid" id="teams-table">
-                <thead>
-                    <tr>
-                        <!-- No. -->
-                        <th class="grow-0 max-w-[50px] w-[50px]"></th>
+    <% if (team.users.length> 0) { %>
+        <div class="text-end">
+            <button class="btn outlined add-member-btn">افزودن عضو</button>
+        </div>
+        <% } %>
+            <div class="overflow-x-auto">
+                <% if (team.users.length> 0) { %>
+                    <table class="datagrid" id="teams-table">
+                        <thead>
+                            <tr>
+                                <!-- No. -->
+                                <th class="grow-0 max-w-[50px] w-[50px]"></th>
 
-                        <!-- Name -->
-                        <th class="grow shrink-0 min-w-[150px] w-[150px]">نام</th>
+                                <!-- Name -->
+                                <th class="grow shrink-0 min-w-[150px] w-[150px]">نام</th>
 
-                        <!-- Surname -->
-                        <th class="grow shrink-0 min-w-[150px] w-[150px]">نام خانوادگی</th>
+                                <!-- Surname -->
+                                <th class="grow shrink-0 min-w-[150px] w-[150px]">نام خانوادگی</th>
 
-                        <!-- Title -->
-                        <th class="grow shrink-0 min-w-[200px] w-[200px]">عنوان</th>
+                                <!-- Title -->
+                                <th class="grow shrink-0 min-w-[200px] w-[200px]">عنوان</th>
 
-                        <!-- Actions -->
-                        <th class="grow-0 shrink-0 max-w-[50px] w-[50px]"></th>
-                    </tr>
-                </thead>
+                                <!-- Actions -->
+                                <th class="grow-0 shrink-0 max-w-[50px] w-[50px]"></th>
+                            </tr>
+                        </thead>
 
-                <tbody>
-                    <% team.users.forEach((user, index)=> { %>
-                        <tr>
-                            <!-- No. -->
-                            <td class="grow-0 max-w-[50px] w-[50px]">
-                                <%= index + 1 %>
-                            </td>
+                        <tbody>
+                            <% team.users.forEach((user, index)=> { %>
+                                <tr>
+                                    <!-- No. -->
+                                    <td class="grow-0 max-w-[50px] w-[50px]">
+                                        <%= index + 1 %>
+                                    </td>
 
-                            <!-- Name -->
-                            <td class="grow shrink-0 min-w-[150px] w-[150px]">
-                                <%= user.user.profile.firstName %>
-                            </td>
+                                    <!-- Name -->
+                                    <td class="grow shrink-0 min-w-[150px] w-[150px]">
+                                        <%= user.user.profile.firstName %>
+                                    </td>
 
-                            <!-- Surname -->
-                            <td class="grow shrink-0 min-w-[150px] w-[150px]">
-                                <%= user.user.profile.lastName %>
-                            </td>
+                                    <!-- Surname -->
+                                    <td class="grow shrink-0 min-w-[150px] w-[150px]">
+                                        <%= user.user.profile.lastName %>
+                                    </td>
 
-                            <!-- Title -->
-                            <td class="grow shrink-0 min-w-[200px] w-[200px]">
-                                <%= user.user.profile.title %>
-                            </td>
+                                    <!-- Title -->
+                                    <td class="grow shrink-0 min-w-[200px] w-[200px]">
+                                        <%= user.user.profile.title %>
+                                    </td>
 
-                            <!-- Actions -->
-                            <td class="grow-0 shrink-0 max-w-[50px] w-[50px]">
-                                <button class="actions-btn" data-id="<%= user.id %>">...</button>
-                                <div class="dropdown" data-id="<%= user.id %>">
-                                    <button class="dropdown-item edit">جزییات و ویرایش</button>
-                                    <button class="dropdown-item delete">حذف</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <% }) %>
-                </tbody>
-            </table>
-            <% } else { %>
-                <div
-                    class="h-[200px] w-full rounded-2xl border-2 border-dark-100/25 flex flex-col gap-4 justify-center items-center">
-                    <p class="text-dark-100">عضوی برای تیم انتخاب نکرده اید!</p>
-                    <button class="btn outlined add-member-btn">افزودن عضو</button>
-                </div>
-                <% } %>
-    </div>
+                                    <!-- Actions -->
+                                    <td class="grow-0 shrink-0 max-w-[50px] w-[50px]">
+                                        <button class="actions-btn" data-id="<%= user.id %>">...</button>
+                                        <div class="dropdown" data-id="<%= user.id %>">
+                                            <button class="dropdown-item edit">جزییات و ویرایش</button>
+                                            <button class="dropdown-item delete">حذف</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <div
+                            class="h-[200px] w-full rounded-2xl border-2 border-dark-100/25 flex flex-col gap-4 justify-center items-center">
+                            <p class="text-dark-100">عضوی برای تیم انتخاب نکرده اید!</p>
+                            <button class="btn outlined add-member-btn">افزودن عضو</button>
+                        </div>
+                        <% } %>
+            </div>
 </div>
 <!-- #endregion -->
 
@@ -126,7 +131,7 @@
 <!-- #endregion -->
 
 <template id="user-card-temp">
-    <div class="user-card border-b transition-all border-dark-50/25 px-2 py-4 group default" data-id="">
+    <div class="user-card border-b transition-all border-dark-50/25 px-2 py-4 group" data-id="">
         <div class="flex justify-between items-center">
             <div class="flex gap-4 items-center">
                 <img src="" alt="" class="w-[64px] h-[64px] rounded-lg bg-dark-100" />
@@ -246,6 +251,7 @@
             const addBtn = userCardClone.querySelector(".add-btn");
             const removeBtn = userCardClone.querySelector(".remove-btn");
 
+            userCard.classList.add(user.teams?.length ? "member" : "default");
             usernameElem.textContent = `${user.profile.firstName} ${user.profile.lastName}`;
             userTitleElem.textContent = user.profile.title || "تعیین نشده";
             userCard.dataset.id = user.id;
@@ -286,9 +292,30 @@
         }
     }
 
-    function removeFromTeam(userID) {
+    async function removeFromTeam(userID) {
         const teamID = "<%= team.id %>";
-        console.log(teamID, userID);
+        try {
+            const res = await fetch(`http://localhost:4000/panel/teams/${teamID}/members`, {
+                method: "DELETE",
+                body: JSON.stringify({
+                    userID
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (res.ok) {
+                const userCard = document.querySelector(`.user-card[data-id="${userID}"]`);
+
+                if (userCard) {
+                    userCard.classList.add("default");
+                    userCard.classList.remove("member");
+                }
+            }
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     userSearchBtn.addEventListener("click", userSearchBtnHandler);
