@@ -49,11 +49,15 @@ export class TeamsService {
         id,
       },
       relations: {
-        users: true,
+        users: {
+          user: {
+            profile: true,
+          },
+        },
         projects: true,
       },
     });
-
+    console.log(team?.users[0].user.profile);
     return team;
   }
 
@@ -93,5 +97,16 @@ export class TeamsService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async addMember({ teamID, userID }: { teamID: string; userID: string }) {
+    const result = await this.userTeamRepository.save(
+      this.userTeamRepository.create({
+        teamID,
+        userID,
+      }),
+    );
+
+    return result;
   }
 }

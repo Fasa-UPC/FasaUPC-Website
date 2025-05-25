@@ -45,7 +45,10 @@ export class PanelUsersService {
     return usersCount;
   }
 
-  async searchUsers(search: string, pagination?: Pagination) {
+  async searchUsers(
+    { search, teamID }: { search: string; teamID?: string },
+    pagination?: Pagination,
+  ) {
     const users = await this.userRepository.find({
       where: {
         profile: [
@@ -59,9 +62,15 @@ export class PanelUsersService {
             title: Like(`%${search}%`),
           },
         ],
+        teams: [
+          {
+            id: teamID,
+          },
+        ],
       },
       relations: {
         profile: true,
+        teams: !!teamID,
       },
       select: {
         id: true,

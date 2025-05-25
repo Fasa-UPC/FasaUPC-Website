@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query, Render } from '@nestjs/common';
+import { Controller, Get, Query, Render } from '@nestjs/common';
 import { PanelUsersService } from './panel-users.service';
 
 @Controller('panel/users')
@@ -24,11 +24,15 @@ export class PanelUsersController {
     @Query('page') page: number,
     @Query('count') count: number,
     @Query('search') search: string,
+    @Query('team') teamID: string,
   ) {
-    const users = await this.panelUsersService.searchUsers(search, {
-      page,
-      count,
-    });
+    const users = await this.panelUsersService.searchUsers(
+      { search, teamID },
+      {
+        page,
+        count,
+      },
+    );
 
     return users;
   }

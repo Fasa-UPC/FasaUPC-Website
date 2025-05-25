@@ -3,7 +3,6 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ProjectTeam } from './projectTeam.entity';
 import { Project } from './project.entity';
 import { UserTeam } from './userTeam.entity';
-import { User } from './user.entity';
 import { Expose } from 'class-transformer';
 
 @Entity({ name: 'team' })
@@ -21,7 +20,7 @@ export class Team {
   projects: Project[];
 
   @OneToMany(() => UserTeam, (userTeam) => userTeam.team)
-  users: User[];
+  users: UserTeam[];
 
   @Expose()
   usersCount: number;

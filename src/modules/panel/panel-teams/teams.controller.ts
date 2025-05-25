@@ -57,4 +57,14 @@ export class TeamsController {
 
     return team;
   }
+
+  @Post(':teamID/members')
+  async addMember(
+    @Param('teamID') teamID: string,
+    @Body('userID') userID: string,
+  ) {
+    const result = await this.teamsService.addMember({ teamID, userID });
+
+    return result;
+  }
 }

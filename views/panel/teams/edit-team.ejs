@@ -45,22 +45,22 @@
                         <tr>
                             <!-- No. -->
                             <td class="grow-0 max-w-[50px] w-[50px]">
-                                <%= offset + index + 1 %>
+                                <%= index + 1 %>
                             </td>
 
                             <!-- Name -->
                             <td class="grow shrink-0 min-w-[150px] w-[150px]">
-                                <%= user.profile.firstName %>
+                                <%= user.user.profile.firstName %>
                             </td>
 
                             <!-- Surname -->
                             <td class="grow shrink-0 min-w-[150px] w-[150px]">
-                                <%= user.profile.lastName %>
+                                <%= user.user.profile.lastName %>
                             </td>
 
                             <!-- Title -->
                             <td class="grow shrink-0 min-w-[200px] w-[200px]">
-                                <%= user.profile.title %>
+                                <%= user.user.profile.title %>
                             </td>
 
                             <!-- Actions -->
@@ -88,7 +88,8 @@
 
 <!-- #region Add memeber modal -->
 <div id="add-member-modal" class="modal">
-    <div class="content px-2 py-4 rounded-xl w-screen h-screen flex flex-col md:w-[400px]">
+    <div
+        class="content px-2 py-4 rounded-xl w-screen h-screen flex flex-col md:h-[600px] md:max-h-screen md:w-[600px] lg:w-[800px]">
         <div class="text-lg font-bold text-dark-50 mb-4">
             افزودن عضو
         </div>
@@ -101,8 +102,8 @@
         </div>
         <!-- #region -->
         <div class="flex gap-2 w-full bg-dark600">
-            <button class="btn primary w-full">بله</button>
-            <button class="btn outlined w-full close-btn" data-for="add-member-modal">انصراف</button>
+            <!-- <button class="btn primary w-full">بله</button> -->
+            <button class="btn outlined w-full close-btn" data-for="add-member-modal">بستن</button>
         </div>
     </div>
     <div class="overlay"></div>
@@ -124,7 +125,53 @@
 </div>
 <!-- #endregion -->
 
+<template id="user-card-temp">
+    <div class="user-card border-b transition-all border-dark-50/25 px-2 py-4 group default" data-id="">
+        <div class="flex justify-between items-center">
+            <div class="flex gap-4 items-center">
+                <img src="" alt="" class="w-[64px] h-[64px] rounded-lg bg-dark-100" />
+                <div class="flex flex-col gap-2">
+                    <p class="user-fullname text-dark-50"></p>
+                    <p class="user-title text-sm text-dark-100"></p>
+                </div>
+            </div>
+
+            <button class="add-btn hidden group-[.default]:block btn primary">افزودن</button>
+            <button class="remove-btn hidden group-[.member]:block btn outlined">حذف از تیم</button>
+        </div>
+    </div>
+</template>
+
+<script src="/scripts/vendors/popper.min.js"></script>
+<script src="/scripts/vendors/tippy-bundle.umd.min.js"></script>
 <script src="/scripts/modal.js"></script>
+
+<script>
+    const actionsBtns = Array.from(document.getElementsByClassName('actions-btn'));
+
+    actionsBtns.forEach(ab => {
+        const id = ab.dataset.id;
+        const dropdown = document.querySelector(`.dropdown[data-id="${id}"]`);
+
+        tippy(ab, {
+            content: dropdown,
+            trigger: 'click',
+            placement: 'bottom',
+            appendTo: 'parent',
+            arrow: false,
+            interactive: true,
+            onShown(instance) {
+                const dropdownItems = Array.from(instance.popper.querySelectorAll('.dropdown-item'));
+                dropdownItems.forEach(di => {
+                    di.addEventListener("click", () => {
+                        instance.hide();
+                    })
+                })
+            }
+        });
+    })
+</script>
+
 <script>
     const editTeamForm = document.getElementById('edit-team-form');
     const editTeamConfirmModal = document.getElementById('edit-team-confirm');
@@ -148,6 +195,7 @@
     const userSearchInput = document.getElementById("user-search-input");
     const userSearchBtn = document.getElementById("user-search-btn");
     const usersListModal = document.getElementById("users-list-modal");
+    const userCardTemp = document.getElementById("user-card-temp");
 
     // #region Modal open
     function openAddMemberModal(ev) {
@@ -169,7 +217,7 @@
         const { count: usersCount } = await userCountRes.json();
 
         if (usersCount > 0) {
-            const usersRes = await fetch(`http://localhost:4000/panel/users/search?search=${search}`, {
+            const usersRes = await fetch(`http://localhost:4000/panel/users/search?search=${search}&teamID=<%= team.id %>`, {
                 method: "GET"
             });
 
@@ -189,16 +237,58 @@
     }
 
     function renderUsersListModal(users) {
-        console.log(users);
-
         usersListModal.replaceChildren();
-        users.forEach(user => {
-            const userCard = document.createElement("div");
-            userCard.className = "bg-red-900";
-            userCard.innerText = user.profile.firstName;
+        users.forEach((user, index) => {
+            const userCardClone = userCardTemp.content.cloneNode(true);
+            const userCard = userCardClone.querySelector(".user-card");
+            const usernameElem = userCardClone.querySelector(".user-fullname");
+            const userTitleElem = userCardClone.querySelector(".user-title");
+            const addBtn = userCardClone.querySelector(".add-btn");
+            const removeBtn = userCardClone.querySelector(".remove-btn");
 
-            usersListModal.appendChild(userCard);
+            usernameElem.textContent = `${user.profile.firstName} ${user.profile.lastName}`;
+            userTitleElem.textContent = user.profile.title || "تعیین نشده";
+            userCard.dataset.id = user.id;
+            addBtn.addEventListener('click', () => {
+                addToTeam(user.id);
+            })
+            removeBtn.addEventListener('click', () => {
+                removeFromTeam(user.id);
+            })
+
+            usersListModal.appendChild(userCardClone);
         })
+    }
+
+    async function addToTeam(userID) {
+        const teamID = "<%= team.id %>";
+        try {
+            const res = await fetch(`http://localhost:4000/panel/teams/${teamID}/members`, {
+                method: "POST",
+                body: JSON.stringify({
+                    userID
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (res.ok) {
+                const userCard = document.querySelector(`.user-card[data-id="${userID}"]`);
+
+                if (userCard) {
+                    userCard.classList.remove("default");
+                    userCard.classList.add("member");
+                }
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    function removeFromTeam(userID) {
+        const teamID = "<%= team.id %>";
+        console.log(teamID, userID);
     }
 
     userSearchBtn.addEventListener("click", userSearchBtnHandler);
