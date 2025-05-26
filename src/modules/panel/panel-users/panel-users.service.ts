@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Profile } from 'src/entities/profile.entity';
 import { User } from 'src/entities/user.entity';
 import { Pagination } from 'src/types/public.type';
 import { Like, Repository } from 'typeorm';
@@ -49,46 +50,69 @@ export class PanelUsersService {
     { search, teamID }: { search: string; teamID?: string },
     pagination?: Pagination,
   ) {
-    const users = await this.userRepository.find({
-      where: {
-        profile: [
-          {
-            firstName: Like(`%${search}%`),
-          },
-          {
-            lastName: Like(`%${search}%`),
-          },
-          {
-            title: Like(`%${search}%`),
-          },
-        ],
-        teams: [
-          {
-            teamID,
-          },
-        ],
-      },
-      relations: {
-        profile: true,
-        teams: !!teamID,
-      },
-      select: {
-        id: true,
-        profile: {
-          id: true,
-          firstName: true,
-          lastName: true,
-          title: true,
-          image: true,
-        },
-        role: true,
-      },
-      skip:
+    // const users = await this.userRepository.find({
+    //   where: {
+    //     profile: [
+    //       {
+    //         firstName: Like(`%${search}%`),
+    //       },
+    //       {
+    //         lastName: Like(`%${search}%`),
+    //       },
+    //       {
+    //         title: Like(`%${search}%`),
+    //       },
+    //     ],
+    //     teams: [
+    //       {
+    //         teamID,
+    //       },
+    //     ],
+    //   },
+    //   relations: {
+    //     profile: true,
+    //     teams: !!teamID,
+    //   },
+    //   select: {
+    //     id: true,
+    //     profile: {
+    //       id: true,
+    //       firstName: true,
+    //       lastName: true,
+    //       title: true,
+    //       image: true,
+    //     },
+    //     role: true,
+    //   },
+    //   skip:
+    //     pagination?.count &&
+    //     pagination?.page &&
+    //     pagination.page * pagination.count,
+    //   take: pagination?.count,
+    // });
+
+    const users = await this.userRepository
+      .createQueryBuilder('user')
+      .select(['user.id', 'user.role'])
+      .innerJoinAndSelect(
+        'user.profile',
+        'profile',
+        'user.id = profile.user_id',
+      )
+      .leftJoinAndSelect('user.teams', 'team')
+      .leftJoin(
+        'userteam',
+        'userTeam',
+        'userTeam.user_id = user.id AND userTeam.team_id = team.id AND team.id = :teamID',
+        { teamID },
+      )
+      .skip(
         pagination?.count &&
-        pagination?.page &&
-        pagination.page * pagination.count,
-      take: pagination?.count,
-    });
+          pagination?.page &&
+          pagination.page * pagination.count,
+      )
+      .take(pagination?.count)
+      .getMany();
 
     return users;
   }

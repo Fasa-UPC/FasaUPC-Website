@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-yellow-50: oklch(98.7% 0.026 102.212);
     --color-yellow-700: oklch(55.4% 0.135 66.442);
     --color-green-200: oklch(92.5% 0.084 155.995);
@@ -1332,28 +1331,6 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
-  .not-last\:border {
-    &:not(*:last-child) {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-  }
-  .not-last\:border-dark-50\/25 {
-    &:not(*:last-child) {
-      border-color: color-mix(in srgb, #eaeaeb 25%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        border-color: color-mix(in oklab, var(--color-dark-50) 25%, transparent);
-      }
-    }
-  }
-  .not-last\:border-dark-50\/50 {
-    &:not(*:last-child) {
-      border-color: color-mix(in srgb, #eaeaeb 50%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        border-color: color-mix(in oklab, var(--color-dark-50) 50%, transparent);
-      }
-    }
-  }
   .group-\[\.default\]\:block {
     &:is(:where(.group):is(.default) *) {
       display: block;
@@ -1364,61 +1341,9 @@
       display: block;
     }
   }
-  .group-\[data-status\=\]\:block {
-    &:is(:where(.group):is(data-status=) *) {
-      display: block;
-    }
-  }
-  .group-\[data-status\=default\]\:block {
-    &:is(:where(.group):is(data-status=default) *) {
-      display: block;
-    }
-  }
-  .group-\[data-status\=default\]\:hidden {
-    &:is(:where(.group):is(data-status=default) *) {
-      display: none;
-    }
-  }
-  .group-\[data-status\=joined\]\:block {
-    &:is(:where(.group):is(data-status=joined) *) {
-      display: block;
-    }
-  }
-  .group-\[data-status\=member\]\:block {
-    &:is(:where(.group):is(data-status=member) *) {
-      display: block;
-    }
-  }
-  .group-\[status\=default\]\:block {
-    &:is(:where(.group):is(status=default) *) {
-      display: block;
-    }
-  }
-  .group-\[status\=member\]\:block {
-    &:is(:where(.group):is(status=member) *) {
-      display: block;
-    }
-  }
   .peer-\[\.show\]\:opacity-100 {
     &:is(:where(.peer):is(.show) ~ *) {
       opacity: 100%;
-    }
-  }
-  .hover\:bg-dark800 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-dark800);
-      }
-    }
-  }
-  .hover\:bg-dark800\/50 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, #16171e 50%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-dark800) 50%, transparent);
-        }
-      }
     }
   }
   .hover\:bg-purple-500\/5 {
@@ -1462,31 +1387,6 @@
         transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
         transition-duration: var(--tw-duration, var(--default-transition-duration));
       }
-    }
-  }
-  .data-\[selected\]\:bg-red-500 {
-    &[data-selected] {
-      background-color: var(--color-red-500);
-    }
-  }
-  .data-\[selected\=\]\:bg-red-500 {
-    &[data-selected=""] {
-      background-color: var(--color-red-500);
-    }
-  }
-  .data-\[selected\=true\]\:bg-dark600 {
-    &[data-selected="true"] {
-      background-color: var(--color-dark600);
-    }
-  }
-  .data-\[selected\=true\]\:bg-dark800 {
-    &[data-selected="true"] {
-      background-color: var(--color-dark800);
-    }
-  }
-  .data-\[selected\=true\]\:bg-red-500 {
-    &[data-selected="true"] {
-      background-color: var(--color-red-500);
     }
   }
   .md\:relative {
@@ -1684,11 +1584,6 @@
       height: 337px;
     }
   }
-  .md\:h-\[400px\] {
-    @media (width >= 48rem) {
-      height: 400px;
-    }
-  }
   .md\:h-\[428px\] {
     @media (width >= 48rem) {
       height: 428px;
@@ -1702,16 +1597,6 @@
   .md\:h-\[600px\] {
     @media (width >= 48rem) {
       height: 600px;
-    }
-  }
-  .md\:h-\[max\] {
-    @media (width >= 48rem) {
-      height: max;
-    }
-  }
-  .md\:h-max {
-    @media (width >= 48rem) {
-      height: max-content;
     }
   }
   .md\:max-h-screen {
