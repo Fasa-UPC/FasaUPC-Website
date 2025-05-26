@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Profile } from 'src/entities/profile.entity';
 import { User } from 'src/entities/user.entity';
 import { Pagination } from 'src/types/public.type';
 import { Like, Repository } from 'typeorm';
@@ -106,6 +105,9 @@ export class PanelUsersService {
         'userTeam.user_id = user.id AND userTeam.team_id = team.id AND team.id = :teamID',
         { teamID },
       )
+      .where('profile.first_name LIKE :search', { search: `%${search}%` })
+      .orWhere('profile.last_name LIKE :search', { search: `%${search}%` })
+      .orWhere('profile.title LIKE :search', { search: `%${search}%` })
       .skip(
         pagination?.count &&
           pagination?.page &&
