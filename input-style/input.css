@@ -26,6 +26,7 @@
   --shadow-box: 2px 2px 8px rgba( 255, 255, 255, 0.25);
   --inset-shadow-hover: inset 2px -2px 8px rgba(0, 0, 0, 0.25);
   --inset-shadow-box: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-up-purple: 0 -4px 8px rgba(110, 110 , 255, 0.75);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
