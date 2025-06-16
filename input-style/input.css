@@ -28,5 +28,12 @@
   --inset-shadow-box: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
   --shadow-up-purple: 0 -4px 8px rgba(110, 110 , 255, 0.75);
 }
+.custom-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.custom-card:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 20px 35px -8px rgba(110, 110, 255, 0.3);
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
