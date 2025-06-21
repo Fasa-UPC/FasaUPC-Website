@@ -1,11 +1,431 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
   </head>
-  <body>
-    <h1>Profiles</h1>
+  <body class="bg-background text-white font-Vazirmatn overflow-x-hidden cursor-default">
+    <!-- navbar-deckstop-start-->
+    <nav
+      class="hidden md:flex md:justify-between md:items-center md:my-[30px] md:mx-[80px] z-50"
+    >
+      <div class="flex items-center gap-10 justify-between">
+        <div class="">
+          <img class="w-[106px] h-[115px]" src="/assets/logo2.png" alt="" />
+        </div>
+        <div class="flex gap-[20px] ">
+          <a
+            class="text-[#BCBDC1]  hover:transition duration-300 ease-in-out cursor-pointer"
+            >خانه</a
+          >
+          <a
+            class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >پروژه ها</a
+          >
+          <a
+            class="text-[18px] font-bold transition duration-300 ease-in-out cursor-pointer"
+            >اعضا</a
+          >
+          <a
+            class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >درباره ی ما</a
+          >
+          <a
+            class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            >ارتباط با ما</a
+          >
+        </div>
+      </div>
+      <div class="">
+        <button
+          class="bg-purple-500 text-[14px] font-bold w-[140px] h-[40px] rounded-md py-[6px] text-center transition duration-300 ease-in-out cursor-pointer hover:bg-purple-600"
+          type="button"
+        >
+          ورود / ثبت نام
+        </button>
+      </div>
+    </nav>
+    <!-- navbar-deckstop-end-->
+    <header class="header  relative">
+      <!-- navbar-start-mobil-->
+      <nav class="md:hidden text-black flex justify-between items-center mx-[16px] my-[24px]">
+        <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="">
+        <div class="mb-1">
+          <img class=" w-[106px] md:w-[312px] md:h-[337px] md:mr-[55px]" src="/assets/Vector.svg" alt="">
+        </div>
+        <div class="h-10 bg-purple-500 py-2 rounded-lg">
+          <img class="w-6 mx-2" src="/assets/svg/user-circle.svg" alt="">
+        </div>   
+      </nav>
+      <!-- navbar-end-mobil -->
+      <div class="flex flex-col md:flex-row gap-3 md:gap-6 items-center mx-auto justify-center">
+        <div class="flex flex-col gap-2 md:gap-6">
+          <h1 class="text-purple-500 text-2xl md:text-5xl font-bold">اعضای کمیته برنامه‌نویسی دانشگاه فسا</h1>
+          <p class="text-white text-lg md:text-2xl font-semibold">با اعضای فعال تیم ما آشنا شوید</p>
+        </div>
+        <img class="w-[50%] md:w-95" src="/assets/16.png" alt="">
+      </div>
+    </header>
+    <main>
+        <section class="relative w-[100%] md:w-300 mx-auto mb-4 p-4 rounded-lg shadow-lg">
+          <div class="flex items-center justify-between">
+            <!-- بخش سمت راست: آیتم‌های منو -->
+            <div class="flex items-center gap-x-6">
+                <a href="#" class="text-white text-sm md:text-xl font-extrabold hover:[text-shadow:0px_0px_4px_rgba(255,255,255,0.75)] transition-all ease-in duration-300 flex items-center">
+                    مهارت
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
+                <a href="#" class="text-white text-sm md:text-xl font-extrabold hover:[text-shadow:0px_0px_4px_rgba(255,255,255,0.75)] transition-all ease-in duration-300 flex items-center">
+                  پیش فرض
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+            </div>
+
+            <!-- بخش سمت چپ: نوار جستجو -->
+            <div class="relative">
+                <input 
+                    type="text" 
+                    placeholder="جستجو" 
+                    class="bg-[#3c3a54] text-white placeholder-gray-400 rounded-full py-2 pr-10 pl-4 focus:outline-none focus:ring-2 focus:ring-purple-500 w-32 md:w-64 transition-all duration-300"
+                >
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+          </div>
+          <!-- نوار پیشرفت در پایین -->
+          <div class="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg shadow-up-purple"></div>
+        </section>
+      <section class="w-[90%] md:w-280 grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto mt-8">
+        <!-- شروع کد کارت پروفایل عضو تیم -->
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+            <!-- بخش تصویر -->
+            <div class="relative">
+                <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
+                <img class="w-full h-48 object-cover object-center" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عکس پروفایل">
+                
+                <!-- بج امتیاز یا سطح تجربه -->
+                <div class="absolute top-3 left-3 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm">
+                    <img src="assets/Stars.svg" alt="">
+                    <span>12</span>
+                </div>
+
+                <!-- افکت هاور با متن و آیکون -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-lg font-bold text-white">مشاهده پروژه ها</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6E6EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- بخش محتوا -->
+            <div class="p-5">
+                <!-- نام و عنوان شغلی -->
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-100">جان دوو</h2>
+                    <p class="text-sm text-[#6E6EFF] font-medium">توسعه‌دهنده ارشد فرانت‌اند</p>
+                </div>
+                
+                <!-- خط جداکننده -->
+                <div class="border-t border-white/10 my-4"></div>
+                
+                <!-- بخش آمار -->
+                <div class="flex justify-around">
+                    <!-- آمار پروژه‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">3</span>
+                        <span class="flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-5" src="assets/svg/Collection Icon.svg" alt="">پروژه</span>
+                    </div>
+                    <!-- آمار تکنولوژی‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">4</span>
+                        <span class=" flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-6" src="assets/svg/Memory Icon.svg" alt="">تکنولوژی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- پایان کد کارت -->
+         <!-- شروع کد کارت پروفایل عضو تیم -->
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+            <!-- بخش تصویر -->
+            <div class="relative">
+                <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
+                <img class="w-full h-48 object-cover object-center" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عکس پروفایل">
+                
+                <!-- بج امتیاز یا سطح تجربه -->
+                <div class="absolute top-3 left-3 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm">
+                    <img src="assets/Stars.svg" alt="">
+                    <span>12</span>
+                </div>
+
+                <!-- افکت هاور با متن و آیکون -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-lg font-bold text-white">مشاهده پروژه ها</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6E6EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- بخش محتوا -->
+            <div class="p-5">
+                <!-- نام و عنوان شغلی -->
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-100">جان دوو</h2>
+                    <p class="text-sm text-[#6E6EFF] font-medium">توسعه‌دهنده ارشد فرانت‌اند</p>
+                </div>
+                
+                <!-- خط جداکننده -->
+                <div class="border-t border-white/10 my-4"></div>
+                
+                <!-- بخش آمار -->
+                <div class="flex justify-around">
+                    <!-- آمار پروژه‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">3</span>
+                        <span class="flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-5" src="assets/svg/Collection Icon.svg" alt="">پروژه</span>
+                    </div>
+                    <!-- آمار تکنولوژی‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">4</span>
+                        <span class=" flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-6" src="assets/svg/Memory Icon.svg" alt="">تکنولوژی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- پایان کد کارت -->
+         <!-- شروع کد کارت پروفایل عضو تیم -->
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+            <!-- بخش تصویر -->
+            <div class="relative">
+                <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
+                <img class="w-full h-48 object-cover object-center" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عکس پروفایل">
+                
+                <!-- بج امتیاز یا سطح تجربه -->
+                <div class="absolute top-3 left-3 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm">
+                    <img src="assets/Stars.svg" alt="">
+                    <span>12</span>
+                </div>
+
+                <!-- افکت هاور با متن و آیکون -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-lg font-bold text-white">مشاهده پروژه ها</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6E6EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- بخش محتوا -->
+            <div class="p-5">
+                <!-- نام و عنوان شغلی -->
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-100">جان دوو</h2>
+                    <p class="text-sm text-[#6E6EFF] font-medium">توسعه‌دهنده ارشد فرانت‌اند</p>
+                </div>
+                
+                <!-- خط جداکننده -->
+                <div class="border-t border-white/10 my-4"></div>
+                
+                <!-- بخش آمار -->
+                <div class="flex justify-around">
+                    <!-- آمار پروژه‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">3</span>
+                        <span class="flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-5" src="assets/svg/Collection Icon.svg" alt="">پروژه</span>
+                    </div>
+                    <!-- آمار تکنولوژی‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">4</span>
+                        <span class=" flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-6" src="assets/svg/Memory Icon.svg" alt="">تکنولوژی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- پایان کد کارت -->
+         <!-- شروع کد کارت پروفایل عضو تیم -->
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+            <!-- بخش تصویر -->
+            <div class="relative">
+                <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
+                <img class="w-full h-48 object-cover object-center" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عکس پروفایل">
+                
+                <!-- بج امتیاز یا سطح تجربه -->
+                <div class="absolute top-3 left-3 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm">
+                    <img src="assets/Stars.svg" alt="">
+                    <span>12</span>
+                </div>
+
+                <!-- افکت هاور با متن و آیکون -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-lg font-bold text-white">مشاهده پروژه ها</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6E6EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- بخش محتوا -->
+            <div class="p-5">
+                <!-- نام و عنوان شغلی -->
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-100">جان دوو</h2>
+                    <p class="text-sm text-[#6E6EFF] font-medium">توسعه‌دهنده ارشد فرانت‌اند</p>
+                </div>
+                
+                <!-- خط جداکننده -->
+                <div class="border-t border-white/10 my-4"></div>
+                
+                <!-- بخش آمار -->
+                <div class="flex justify-around">
+                    <!-- آمار پروژه‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">3</span>
+                        <span class="flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-5" src="assets/svg/Collection Icon.svg" alt="">پروژه</span>
+                    </div>
+                    <!-- آمار تکنولوژی‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">4</span>
+                        <span class=" flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-6" src="assets/svg/Memory Icon.svg" alt="">تکنولوژی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- پایان کد کارت -->
+         <!-- شروع کد کارت پروفایل عضو تیم -->
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+            <!-- بخش تصویر -->
+            <div class="relative">
+                <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
+                <img class="w-full h-48 object-cover object-center" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عکس پروفایل">
+                
+                <!-- بج امتیاز یا سطح تجربه -->
+                <div class="absolute top-3 left-3 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm">
+                    <img src="assets/Stars.svg" alt="">
+                    <span>12</span>
+                </div>
+
+                <!-- افکت هاور با متن و آیکون -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-lg font-bold text-white">مشاهده پروژه ها</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6E6EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- بخش محتوا -->
+            <div class="p-5">
+                <!-- نام و عنوان شغلی -->
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-100">جان دوو</h2>
+                    <p class="text-sm text-[#6E6EFF] font-medium">توسعه‌دهنده ارشد فرانت‌اند</p>
+                </div>
+                
+                <!-- خط جداکننده -->
+                <div class="border-t border-white/10 my-4"></div>
+                
+                <!-- بخش آمار -->
+                <div class="flex justify-around">
+                    <!-- آمار پروژه‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">3</span>
+                        <span class="flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-5" src="assets/svg/Collection Icon.svg" alt="">پروژه</span>
+                    </div>
+                    <!-- آمار تکنولوژی‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">4</span>
+                        <span class=" flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-6" src="assets/svg/Memory Icon.svg" alt="">تکنولوژی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- پایان کد کارت -->
+         <!-- شروع کد کارت پروفایل عضو تیم -->
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+            <!-- بخش تصویر -->
+            <div class="relative">
+                <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
+                <img class="w-full h-48 object-cover object-center" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عکس پروفایل">
+                
+                <!-- بج امتیاز یا سطح تجربه -->
+                <div class="absolute top-3 left-3 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm">
+                    <img src="assets/Stars.svg" alt="">
+                    <span>12</span>
+                </div>
+
+                <!-- افکت هاور با متن و آیکون -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-lg font-bold text-white">مشاهده پروژه ها</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6E6EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- بخش محتوا -->
+            <div class="p-5">
+                <!-- نام و عنوان شغلی -->
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-100">جان دوو</h2>
+                    <p class="text-sm text-[#6E6EFF] font-medium">توسعه‌دهنده ارشد فرانت‌اند</p>
+                </div>
+                
+                <!-- خط جداکننده -->
+                <div class="border-t border-white/10 my-4"></div>
+                
+                <!-- بخش آمار -->
+                <div class="flex justify-around">
+                    <!-- آمار پروژه‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">3</span>
+                        <span class="flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-5" src="assets/svg/Collection Icon.svg" alt="">پروژه</span>
+                    </div>
+                    <!-- آمار تکنولوژی‌ها -->
+                    <div class="text-center">
+                        <span class="text-2xl font-bold">4</span>
+                        <span class=" flex gap-2 justify-center items-center text-xs text-gray-400"><img class="w-6" src="assets/svg/Memory Icon.svg" alt="">تکنولوژی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- پایان کد کارت -->
+      </section>
+    </main>
+    <footer class="bg-bg-footer w-full h-[245px] flex flex-col justify-between">
+      <section class="flex flex-col items-center mt-7 mb-5 md:mb-0">
+        <img class="w-[68px] mb-6" src="/assets/logo2.png" alt="">
+        <div class="flex gap-[48px]">
+          <p class="text-text-footer text-[14px] ">پروژه ها</p>
+          <p class="text-text-footer text-[14px] ">اعضا</p>
+          <p class="text-text-footer text-[14px] ">درباره ما</p>
+          <p class="text-text-footer text-[14px] ">تماس با ما</p>
+        </div>
+        <div class="flex gap-4 mt-4 translate-none md:translate-y-[46px]">
+          <img class="w-6 h-6" src="/assets/svg/figma-footer.svg" alt="">
+          <img class="w-6 h-6" src="/assets/svg/telegram-footer.svg" alt="">
+          <img class="w-6 h-6" src="/assets/svg/dribbble-footer.svg" alt="">
+          <img class="w-6 h-6" src="/assets/svg/instagram-footer.svg" alt="">
+          <img class="w-6 h-6" src="/assets/svg/linkedin-footer.svg" alt="">
+        </div>
+      </section>
+      <section class="flex flex-col-reverse md:flex-row gap-4 md:gap-0 justify-between items-start md:items-center mx-16 pb-3">
+        <p class="text-[#8C94A3] text-[10px] md:text-[12px] font-[300]">تمام حقوق متعلق به کمیته برنامه‌نویسی دانشکاه فسا است. 2025©</p>
+        
+        <select class="w-[113px] h-8 border-2 border-gray-500 rounded-lg outline-0 hover:border-gray-400 transition duration-150 ease-in-out ">
+          <option value="Farsi">Farsi</option>
+          <option value="English">English</option>
+        </select>
+      </section>
+    </footer>
   </body>
 </html>
