@@ -22,7 +22,7 @@
         </div>
         <div class="flex gap-[20px] ">
           <a
-            class="text-[#BCBDC1]  hover:transition duration-300 ease-in-out cursor-pointer"
+            class="text-[18px] font-bold hover:transition duration-300 ease-in-out cursor-pointer"
             >خانه</a
           >
           <a
@@ -30,7 +30,7 @@
             >پروژه ها</a
           >
           <a
-            class="text-[18px] font-bold hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
+            class="text-[#BCBDC1] hover:text-white-hv transition duration-300 ease-in-out cursor-pointer"
             >اعضا</a
           >
           <a
@@ -53,7 +53,7 @@
       </div>
     </nav>
     <!-- navbar-deckstop-end-->
-    <header class="header overflow-x-hidden relative">
+    <header class="header overflow-hidden mb-2 relative">
       <!-- navbar-start-mobil-->
       <nav class="md:hidden text-black flex justify-between items-center mx-[16px] my-[24px]">
         <img class="w-6 h-6" src="/assets/svg/menu.svg" alt="">
@@ -67,10 +67,10 @@
       <!-- navbar-end-mobil -->
       <div class="relative ">
         <div
-          class="absolute top-[356px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
+        class="absolute top-[100px] md:top-[173px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
         ></div>
         <div
-          class="absolute top-[173px] -right-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
+          class="absolute top-[250px] md:top-[356px] -left-24 w-[290px] h-[290px] bg-[#A259FF]/50 rounded-full blur-[80px] opacity-60 -z-10"
         ></div>
       </div>
       <section
@@ -144,7 +144,7 @@
         ></div>
 
         <div
-          class="flex flex-row-reverse justify-around items-center  word-wrap bg-dark800 w-full md:w-[445px] h-[210px] rounded-lg shadow-[0_0_8px_rgb(255,255,255,0.25)] "
+          class="flex flex-row-reverse justify-around items-center m-1 word-wrap bg-dark800 w-full md:w-[445px] h-[210px] rounded-lg shadow-[0_0_8px_rgb(255,255,255,0.25)] "
         >
           <div class="flex flex-col justify-center items-center gap-3">
             <img class="w-12 h-12" src="/assets/svg/Frame.svg" alt="" />
@@ -247,15 +247,15 @@
       <section class="w-[95%] mb-[96px] md:w-[1040px]  mx-auto">
         <div class="flex flex-col md:flex-row gap-[41px]">
           <!-- شروع کد یک کارت پروژه -->
-          <div class="custom-card group w-full max-w-xs cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10">
+          <div class="custom-card group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10">
               
               <!-- بخش تصویر -->
               <div class="relative">
                   <!-- آدرس عکس پروژه خود را اینجا قرار دهید -->
-                  <img class="w-full h-48 object-cover" src="assets/Image.png" alt="تصویر پروژه">
+                  <img class="w-full h-48 object-cover" src="/assets/Image.png" alt="تصویر پروژه">
                   
                   <!-- این بخش برای تیک سبز پروژه تکمیل شده است. اگر پروژه تکمیل نشده، می‌توانید این div را حذف کنید -->
-                  <!-- 
+                  <!--                   
                   <div class="absolute top-3 left-3 bg-green-500 rounded-full p-1 flex items-center justify-center shadow-md">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -285,10 +285,10 @@
                       <!-- آیکون‌های تکنولوژی -->
                       <div class="flex items-center gap-3">
                           <div title="React">
-                            <img class="w-6" src="assets/Logos/react-original.svg" alt="">
+                            <img class="w-6" src="/assets/Logos/react-original.svg" alt="">
                           </div>
                           <div title="JavaScript">
-                              <img class="w-6" src="assets/Logos/javascript-original.svg" alt="">
+                              <img class="w-6" src="/assets/Logos/javascript-original.svg" alt="">
                           </div>
                       </div>
 
@@ -303,7 +303,7 @@
           </div>
           <!-- پایان کد کارت -->
           <!-- شروع کد یک کارت پروژه -->
-          <div class="custom-card group w-full max-w-xs cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10">
+          <div class="custom-card group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10">
               
               <!-- بخش تصویر -->
               <div class="relative">
@@ -359,7 +359,7 @@
           </div>
           <!-- پایان کد کارت -->
            <!-- شروع کد یک کارت پروژه -->
-          <div class="custom-card group w-full max-w-xs cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10">
+          <div class="custom-card group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10">
               
               <!-- بخش تصویر -->
               <div class="relative">
@@ -405,7 +405,7 @@
                       </div>
 
                       <!-- آواتارهای تیم -->
-                      <div class="flex -space-x-2 overflow-hidden">
+                      <div class="flex -gap-x-2 overflow-hidden">
                           <img class="inline-block h-7 w-7 rounded-full ring-2 ring-[#242631]" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عضو تیم">
                           <img class="inline-block h-7 w-7 rounded-full ring-2 ring-[#242631]" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="عضو تیم">
                           <!-- <span class="flex items-center justify-center h-7 w-7 rounded-full bg-white/10 text-xs font-medium text-gray-200 ring-2 ring-[#242631]">+۳</span> -->
@@ -435,7 +435,7 @@
       </section>
       <div class="w-[95%] md:w-[1041px] mx-auto flex flex-col md:flex-row gap-[41px]">
         <!-- شروع کد کارت پروفایل عضو تیم -->
-        <div class="group w-full max-w-xs mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
             <!-- بخش تصویر -->
             <div class="relative">
                 <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
@@ -484,7 +484,7 @@
         </div>
         <!-- پایان کد کارت -->
         <!-- شروع کد کارت پروفایل عضو تیم -->
-        <div class="group w-full max-w-xs cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
             <!-- بخش تصویر -->
             <div class="relative">
                 <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
@@ -533,7 +533,7 @@
         </div>
         <!-- پایان کد کارت -->
          <!-- شروع کد کارت پروفایل عضو تیم -->
-        <div class="group w-full max-w-xs cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
+        <div class="group w-full max-w-sm mx-auto cursor-pointer rounded-2xl bg-[#242631] text-white overflow-hidden shadow-lg border border-white/10 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-[0_20px_35px_-8px_rgba(110,110,255,0.3)]">
             <!-- بخش تصویر -->
             <div class="relative">
                 <!-- آدرس عکس پروفایل را اینجا قرار دهید -->
